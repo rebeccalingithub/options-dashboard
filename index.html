@@ -101,7 +101,7 @@
   <header>
     <div>
       <h1>📊 期权交易看板</h1>
-      <div class="header-meta">更新时间：2026-05-28 15:31:35 | 自选股 49 | 持仓 9 合约 | 历史成交 39 笔</div>
+      <div class="header-meta">更新时间：2026-05-28 15:40:26 | 自选股 49 | 持仓 9 合约 | 历史成交 95 笔</div>
     </div>
     <button class="logout-btn" onclick="logout()">退出 ↩</button>
   </header>
@@ -115,9 +115,14 @@
   <div id="tab-strategy" class="tab-panel active">
         <div class="strat-section">
           <div class="strat-section-hdr" style="border-left:3px solid #0071e3;">
-            <span style="font-size:18px;">📈</span>
-            <span style="font-size:15px;font-weight:700;color:#f0f0f0;">牛市价差 (Bull Call Spread)</span>
-            <span class="strat-count">10</span>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                <span style="font-size:18px;">📈</span>
+                <span style="font-size:15px;font-weight:700;color:#f0f0f0;">牛市价差 (Bull Call Spread)</span>
+                <span class="strat-count">10</span>
+              </div>
+              <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">买入低行权价 Call + 卖出高行权价 Call，净支出权利金（Debit Spread）。低IV时买方成本低；看涨但不想押注大行情时使用。最大盈利 = 价差宽度 − 净权利金；最大亏损 = 净权利金。推荐：低行权价接近当前价，高行权价在近期阻力位；到期日 30–60 天。</div>
+            </div>
           </div>
           <div class="strategy-grid">
         <div class="strategy-card">
@@ -273,9 +278,14 @@
         </div>
         <div class="strat-section">
           <div class="strat-section-hdr" style="border-left:3px solid #0071e3;">
-            <span style="font-size:18px;">📉</span>
-            <span style="font-size:15px;font-weight:700;color:#f0f0f0;">熊市价差 (Bear Put Spread)</span>
-            <span class="strat-count">1</span>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                <span style="font-size:18px;">📉</span>
+                <span style="font-size:15px;font-weight:700;color:#f0f0f0;">熊市价差 (Bear Put Spread)</span>
+                <span class="strat-count">1</span>
+              </div>
+              <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">买入高行权价 Put + 卖出低行权价 Put，净支出权利金（Debit Spread）。低IV时买方成本低；看跌但希望控制成本时使用。最大盈利 = 价差宽度 − 净权利金；最大亏损 = 净权利金。推荐：高行权价接近当前价，低行权价在近期支撑位；到期日 30–60 天。</div>
+            </div>
           </div>
           <div class="strategy-grid">
         <div class="strategy-card">
@@ -296,9 +306,14 @@
         </div>
         <div class="strat-section">
           <div class="strat-section-hdr" style="border-left:3px solid #0071e3;">
-            <span style="font-size:18px;">🚀</span>
-            <span style="font-size:15px;font-weight:700;color:#f0f0f0;">买 Call</span>
-            <span class="strat-count">1</span>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                <span style="font-size:18px;">🚀</span>
+                <span style="font-size:15px;font-weight:700;color:#f0f0f0;">买 Call</span>
+                <span class="strat-count">1</span>
+              </div>
+              <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">直接买入看涨期权，看多方向 + 低IV时权利金便宜。RSI 超卖反弹信号出现时介入。推荐 Delta 0.35–0.50（接近 ATM），到期日 45–60 天，防止时间价值损耗过快。最大亏损 = 权利金；潜在盈利无上限。</div>
+            </div>
           </div>
           <div class="strategy-grid">
         <div class="strategy-card">
@@ -319,9 +334,14 @@
         </div>
         <div class="strat-section">
           <div class="strat-section-hdr" style="border-left:3px solid #0071e3;">
-            <span style="font-size:18px;">🐻</span>
-            <span style="font-size:15px;font-weight:700;color:#f0f0f0;">买 Put</span>
-            <span class="strat-count">5</span>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                <span style="font-size:18px;">🐻</span>
+                <span style="font-size:15px;font-weight:700;color:#f0f0f0;">买 Put</span>
+                <span class="strat-count">5</span>
+              </div>
+              <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">直接买入看跌期权，看空方向 + 低IV时权利金便宜。RSI 超买回调信号出现时介入。推荐 Delta −0.35～−0.50，到期日 45–60 天。常用于对冲持仓风险，或纯方向性做空。</div>
+            </div>
           </div>
           <div class="strategy-grid">
         <div class="strategy-card">
@@ -402,9 +422,14 @@
         </div>
         <div class="strat-section">
           <div class="strat-section-hdr" style="border-left:3px solid #86868b;">
-            <span style="font-size:18px;">👁️</span>
-            <span style="font-size:15px;font-weight:700;color:#f0f0f0;">观望</span>
-            <span class="strat-count">30</span>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                <span style="font-size:18px;">👁️</span>
+                <span style="font-size:15px;font-weight:700;color:#f0f0f0;">观望</span>
+                <span class="strat-count">30</span>
+              </div>
+              <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">当前技术面与 IV 信号不明显，无明确方向。建议等待：价格突破关键均线 / RSI 进入超买超卖区间 / IV Rank 升至 50 以上再行动。</div>
+            </div>
           </div>
           <div class="strategy-grid">
         <div class="strategy-card">
@@ -1045,7 +1070,7 @@
           </div>
         </div>
     </div></div>
-  <div id="tab-pnl" class="tab-panel"><div class="period-tabs"><button class="period-tab" onclick="switchPeriod(this,'p0')">今日</button><button class="period-tab" onclick="switchPeriod(this,'p1')">本周</button><button class="period-tab" onclick="switchPeriod(this,'p2')">本月</button><button class="period-tab" onclick="switchPeriod(this,'p3')">3个月</button><button class="period-tab active" onclick="switchPeriod(this,'p4')">全部</button></div><div id="p0" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无期权交易记录</div></div><div id="p1" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无期权交易记录</div></div><div id="p2" class="period-panel" style="display:none">
+  <div id="tab-pnl" class="tab-panel"><div class="period-tabs"><button class="period-tab" onclick="switchPeriod(this,'p0')">今日</button><button class="period-tab" onclick="switchPeriod(this,'p1')">本周</button><button class="period-tab" onclick="switchPeriod(this,'p2')">本月</button><button class="period-tab" onclick="switchPeriod(this,'p3')">3个月</button><button class="period-tab active" onclick="switchPeriod(this,'p4')">全部</button></div><div id="p0" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无期权交易记录</div></div><div id="p1" class="period-panel" style="display:none">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">可计算总盈亏</div>
@@ -1065,12 +1090,282 @@
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">组合数</div>
-            <div class="pnl-stat-val">11<span style="font-size:12px;color:#86868b;"> (0可计算)</span></div>
+            <div class="pnl-stat-val">4<span style="font-size:12px;color:#86868b;"> (0可计算)</span></div>
           </div>
         </div>
         <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
-          ⚠️ 富途历史订单API返回的成交价格以到期结算记录为主，部分开仓成本价可能为0（表示到期归零）。"可计算"仅统计开仓价格非零的合约，其余合约已展示结构以供参考。
+          ℹ️ 数据来源：富途 history_deal_list_query（真实成交记录，含开仓价 / 平仓价）。已按（标的 × 到期日）自动识别价差组合，并计算每条腿的实际盈亏。"可计算"统计已同时有开仓和平仓记录的合约；当前持仓或到期归零的合约单独标注。
         </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-27</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$400.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.38 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$410.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $18.63 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">TSM</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.98 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$392.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.68 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$747.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.22 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$775.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $7.57 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">RKLB</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$109.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.11 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$129.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.6 / 持仓中</span>
+                  
+                </div>
+            </div></div><div id="p2" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">可计算总盈亏</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-4700.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">45.5%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$220.80</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-967.33</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">组合数</div>
+            <div class="pnl-stat-val">16<span style="font-size:12px;color:#86868b;"> (11可计算)</span></div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 数据来源：富途 history_deal_list_query（真实成交记录，含开仓价 / 平仓价）。已按（标的 × 到期日）自动识别价差组合，并计算每条腿的实际盈亏。"可计算"统计已同时有开仓和平仓记录的合约；当前持仓或到期归零的合约单独标注。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-3612.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:26.9%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-970.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:3.3%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-118.0</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-27</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$400.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.38 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$410.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $18.63 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">TSM</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.98 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$392.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.68 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$747.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.22 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$775.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $7.57 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">RKLB</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$109.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.11 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$129.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.6 / 持仓中</span>
+                  
+                </div>
+            </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
@@ -1079,94 +1374,150 @@
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-1843.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$5.20 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$685.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $22.84 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-2284.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$690.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $19.35 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-1935.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$690.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$695.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $13.45 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1345.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$700.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $10.31 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1031.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$853.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$575.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $2.52 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-252.00</span>
                 </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $11.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1105.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$52.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$655.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.81 / 平 $3.9</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-91.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $8.61 / 平 $7.18</span>
+                  <span style="color:#34c759;margin-left:auto;">+$143.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-298.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.01 / 平 $1.76</span>
+                  <span style="color:#34c759;margin-left:auto;">+$75.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.99 / 平 $5.72</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-373.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-20 · 最后成交 2026-05-21</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$71.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$695.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$695.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.56 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-156.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$699.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $2.27 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$227.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -1186,7 +1537,7 @@
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$36.0</span>
-                  <span style="color:#86868b;">买$4.0 / 卖$0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.0 / 持仓中</span>
                   
                 </div>
             </div>
@@ -1194,230 +1545,328 @@
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-912.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$681.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $31.12 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-3112.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$691.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $22.0 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$2200.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-903.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$650.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$650.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $130.54 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-13054.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$660.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $121.51 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$12151.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$65.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$370.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$370.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.55 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-55.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$377.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.2 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$120.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-928.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$655.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.25 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-2725.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$665.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $17.97 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1797.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-920.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$555.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$555.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $82.53 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-8253.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$565.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $73.33 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$7333.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$63.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$365.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $0.42 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-42.00</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$372.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
-                </div>
-            </div>
-            <div class="pnl-combo-card">
-              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
-                <div>
-                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
-                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-01 · 最后成交 2026-05-02</div>
-                </div>
-                <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
-                </div>
-              </div>
-              
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$400.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$470.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$372.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$105.00</span>
                 </div>
             </div></div><div id="p3" class="period-panel" style="display:none">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">可计算总盈亏</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-14149.00</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">胜率</div>
-            <div class="pnl-stat-val">100.0%</div>
+            <div class="pnl-stat-val">37.5%</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">平均盈利</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$220.33</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">平均亏损</div>
-            <div class="pnl-stat-val" style="color:#ff3b30;">$0.00</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-1547.10</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">组合数</div>
-            <div class="pnl-stat-val">16<span style="font-size:12px;color:#86868b;"> (1可计算)</span></div>
+            <div class="pnl-stat-val">21<span style="font-size:12px;color:#86868b;"> (16可计算)</span></div>
           </div>
         </div>
         <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
-          ⚠️ 富途历史订单API返回的成交价格以到期结算记录为主，部分开仓成本价可能为0（表示到期归零）。"可计算"仅统计开仓价格非零的合约，其余合约已展示结构以供参考。
+          ℹ️ 数据来源：富途 history_deal_list_query（真实成交记录，含开仓价 / 平仓价）。已按（标的 × 到期日）自动识别价差组合，并计算每条腿的实际盈亏。"可计算"统计已同时有开仓和平仓记录的合约；当前持仓或到期归零的合约单独标注。
         </div><div style="padding:8px 0 16px;">
                 <div style="display:flex;align-items:center;margin-bottom:6px;">
                   <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
                   <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
-                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                    <div style="width:100.0%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
                   </div>
-                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$218.0</div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-9636.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:45.6%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-4395.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:1.2%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-118.0</div>
                 </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-27</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$400.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.38 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$410.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $18.63 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">TSM</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.98 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$392.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.68 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$747.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.22 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$775.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $7.57 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">RKLB</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$109.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.11 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$129.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.6 / 持仓中</span>
+                  
+                </div>
+            </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
@@ -1426,94 +1875,150 @@
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-1843.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$5.20 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$685.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $22.84 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-2284.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$690.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $19.35 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-1935.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$690.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$695.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $13.45 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1345.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$700.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $10.31 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1031.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$853.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$575.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $2.52 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-252.00</span>
                 </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $11.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1105.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$52.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$655.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.81 / 平 $3.9</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-91.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $8.61 / 平 $7.18</span>
+                  <span style="color:#34c759;margin-left:auto;">+$143.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-298.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.01 / 平 $1.76</span>
+                  <span style="color:#34c759;margin-left:auto;">+$75.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.99 / 平 $5.72</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-373.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-20 · 最后成交 2026-05-21</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$71.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$695.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$695.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.56 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-156.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$699.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $2.27 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$227.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -1533,7 +2038,7 @@
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$36.0</span>
-                  <span style="color:#86868b;">买$4.0 / 卖$0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.0 / 持仓中</span>
                   
                 </div>
             </div>
@@ -1541,196 +2046,196 @@
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-912.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$681.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $31.12 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-3112.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$691.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $22.0 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$2200.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-903.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$650.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$650.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $130.54 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-13054.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$660.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $121.51 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$12151.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$65.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$370.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$370.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.55 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-55.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$377.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.2 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$120.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-928.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$655.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.25 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-2725.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$665.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $17.97 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1797.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-920.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$555.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$555.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $82.53 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-8253.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$565.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $73.33 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$7333.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$63.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$365.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$365.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.42 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-42.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$372.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$105.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-01 · 最后成交 2026-05-02</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-6485.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$400.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$400.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $120.89 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-12089.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$470.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $56.04 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$5604.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -1741,122 +2246,122 @@
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-04-24 · 最后成交 2026-04-25</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-2399.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$10.40 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$375.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $0.31 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-31.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$395.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $0.39 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-39.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$407.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.74 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$174.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$420.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.52 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$152.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$442.5</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $57.81 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-5781.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$445.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.9 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-90.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$445.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$455.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.7 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$170.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$470.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $30.46 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$3046.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-04-23 · 最后成交 2026-04-24</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-194.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$632.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$632.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $17.4 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-1740.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$634.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $15.46 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1546.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-04-22 · 最后成交 2026-04-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-589.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$616.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$616.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $31.19 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-3119.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$622.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $25.3 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$2530.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -1873,73 +2378,171 @@
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$370.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$2.18</span>
-                  <span style="color:#34c759;margin-left:auto;">+$218.00</span>
-                </div>
-            </div>
-            <div class="pnl-combo-card">
-              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
-                <div>
-                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
-                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-02-27 · 最后成交 2026-02-28</div>
-                </div>
-                <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
-                </div>
-              </div>
-              
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$575.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$580.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#aeaeb2;">$370.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $2.18 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$218.00</span>
                 </div>
             </div></div><div id="p4" class="period-panel" style="display:block">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">可计算总盈亏</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-14172.00</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">胜率</div>
-            <div class="pnl-stat-val">100.0%</div>
+            <div class="pnl-stat-val">38.9%</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">平均盈利</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$196.29</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">平均亏损</div>
-            <div class="pnl-stat-val" style="color:#ff3b30;">$0.00</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-1413.27</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">组合数</div>
-            <div class="pnl-stat-val">16<span style="font-size:12px;color:#86868b;"> (1可计算)</span></div>
+            <div class="pnl-stat-val">23<span style="font-size:12px;color:#86868b;"> (18可计算)</span></div>
           </div>
         </div>
         <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
-          ⚠️ 富途历史订单API返回的成交价格以到期结算记录为主，部分开仓成本价可能为0（表示到期归零）。"可计算"仅统计开仓价格非零的合约，其余合约已展示结构以供参考。
+          ℹ️ 数据来源：富途 history_deal_list_query（真实成交记录，含开仓价 / 平仓价）。已按（标的 × 到期日）自动识别价差组合，并计算每条腿的实际盈亏。"可计算"统计已同时有开仓和平仓记录的合约；当前持仓或到期归零的合约单独标注。
         </div><div style="padding:8px 0 16px;">
                 <div style="display:flex;align-items:center;margin-bottom:6px;">
                   <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
                   <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
-                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                    <div style="width:100.0%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
                   </div>
-                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$218.0</div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-9636.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:45.8%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-4418.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:1.2%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-118.0</div>
                 </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-27</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$400.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.38 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$410.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $18.63 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">TSM</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.98 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$392.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.68 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$747.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.22 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$775.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $7.57 / 持仓中</span>
+                  
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">RKLB</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-26</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$109.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.11 / 持仓中</span>
+                  
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$129.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.6 / 持仓中</span>
+                  
+                </div>
+            </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
@@ -1948,94 +2551,150 @@
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-1843.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$5.20 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$685.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $22.84 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-2284.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$690.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $19.35 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-1935.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$690.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$695.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $13.45 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1345.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$700.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $10.31 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1031.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$853.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$575.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $2.52 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-252.00</span>
                 </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $11.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1105.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$52.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$655.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.81 / 平 $3.9</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-91.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $8.61 / 平 $7.18</span>
+                  <span style="color:#34c759;margin-left:auto;">+$143.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-298.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.01 / 平 $1.76</span>
+                  <span style="color:#34c759;margin-left:auto;">+$75.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.99 / 平 $5.72</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-373.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-20 · 最后成交 2026-05-21</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$71.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$695.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$695.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.56 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-156.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$699.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $2.27 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$227.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -2055,7 +2714,7 @@
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$36.0</span>
-                  <span style="color:#86868b;">买$4.0 / 卖$0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.0 / 持仓中</span>
                   
                 </div>
             </div>
@@ -2063,196 +2722,196 @@
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-912.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$681.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $31.12 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-3112.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$691.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $22.0 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$2200.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-903.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$650.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$650.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $130.54 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-13054.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$660.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $121.51 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$12151.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-15 · 最后成交 2026-05-16</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$65.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$370.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$370.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.55 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-55.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$377.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.2 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$120.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-928.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$655.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $27.25 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-2725.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$665.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $17.97 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1797.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-920.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$555.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$555.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $82.53 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-8253.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$565.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $73.33 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$7333.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-08 · 最后成交 2026-05-09</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$63.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$365.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$365.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.42 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-42.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$372.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$105.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-01 · 最后成交 2026-05-02</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-6485.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$400.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$400.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $120.89 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-12089.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$470.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $56.04 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$5604.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -2263,122 +2922,122 @@
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-04-24 · 最后成交 2026-04-25</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-2399.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$10.40 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$375.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $0.31 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-31.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$395.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $0.39 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-39.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$407.5</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.74 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$174.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$420.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.52 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$152.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$442.5</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $57.81 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-5781.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$445.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $0.9 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-90.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$445.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$455.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.7 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$170.00</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$470.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $30.46 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$3046.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-04-23 · 最后成交 2026-04-24</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-194.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$632.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$632.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $17.4 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-1740.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$634.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $15.46 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1546.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Call Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Call Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-04-22 · 最后成交 2026-04-23</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-589.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$616.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$616.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $31.19 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-3119.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
                   <span style="color:#aeaeb2;">$622.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $25.3 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$2530.00</span>
                 </div>
             </div>
             <div class="pnl-combo-card">
@@ -2395,10 +3054,10 @@
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$370.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$2.18</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $2.18 / 平 $0.0</span>
                   <span style="color:#34c759;margin-left:auto;">+$218.00</span>
                 </div>
             </div>
@@ -2406,28 +3065,56 @@
               <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
                 <div>
                   <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">牛市价差 Bull Put Spread</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
                   <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-02-27 · 最后成交 2026-02-28</div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
-                  
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$52.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
                 </div>
               </div>
               
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
                   <span style="color:#aeaeb2;">$575.0</span>
-                  <span style="color:#86868b;">买$0 / 卖$0.0</span>
-                  
+                  <span style="color:#86868b;margin-left:4px;">开 $1.11 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-111.00</span>
                 </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$580.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.63 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$163.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-03-03 · 最后成交 2026-02-27</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-75.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
                 <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
                   <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
                   <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$580.0</span>
-                  <span style="color:#86868b;">买$0.0 / 卖$0</span>
-                  
+                  <span style="color:#aeaeb2;">$599.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $2.24 / 平 $3.53</span>
+                  <span style="color:#34c759;margin-left:auto;">+$129.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$604.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $3.09 / 平 $5.13</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-204.00</span>
                 </div>
             </div></div></div>
 </div>
