@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>期权交易看板</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#1c1c1e;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;min-height:100vh}
+  #lock-screen{position:fixed;inset:0;background:#1c1c1e;display:flex;align-items:center;justify-content:center;z-index:9999}
+  .lock-box{background:#2c2c2e;border-radius:16px;padding:40px;width:320px;text-align:center}
+  .lock-box h2{font-size:20px;margin-bottom:8px}
+  .lock-box p{color:#86868b;font-size:13px;margin-bottom:20px}
+  .lock-box input{width:100%;background:#3a3a3c;border:none;border-radius:10px;padding:12px 16px;color:#f0f0f0;font-size:16px;outline:none;text-align:center;letter-spacing:4px;margin-bottom:12px}
+  .lock-box button{width:100%;background:#0071e3;border:none;border-radius:10px;padding:12px;color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+  .lock-box button:hover{background:#0077ed}
+  .lock-err{color:#ff3b30;font-size:12px;margin-top:8px;min-height:18px}
+
+  header{background:#2c2c2e;border-bottom:1px solid #3a3a3c;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  header h1{font-size:18px;font-weight:700}
+  .header-meta{font-size:12px;color:#86868b}
+  .logout-btn{background:none;border:1px solid #3a3a3c;border-radius:8px;padding:6px 12px;color:#86868b;font-size:12px;cursor:pointer}
+  .logout-btn:hover{border-color:#86868b;color:#f0f0f0}
+
+  .main-tabs{display:flex;gap:2px;padding:16px 24px 0;border-bottom:1px solid #3a3a3c;background:#1c1c1e}
+  .main-tab{padding:10px 20px;border-radius:8px 8px 0 0;font-size:14px;font-weight:500;cursor:pointer;border:none;background:none;color:#86868b;border-bottom:2px solid transparent}
+  .main-tab.active{color:#0071e3;border-bottom:2px solid #0071e3;background:#0071e322}
+
+  .tab-panel{padding:24px;display:none}
+  .tab-panel.active{display:block}
+
+  /* Strategy grid */
+  .strategy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .strategy-card{background:#2c2c2e;border-radius:12px;padding:16px;border:1px solid #3a3a3c;transition:border-color .2s}
+  .strategy-card:hover{border-color:#0071e3}
+  .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+  .ticker-label{font-size:16px;font-weight:700}
+  .price-label{font-size:14px;font-weight:600;text-align:right}
+  .badge-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+  .badge{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500}
+  .strategy-box{background:#1c1c1e;border-radius:8px;padding:12px;margin-top:8px;text-align:center}
+
+  /* Gantt */
+  .gantt-container{font-size:13px}
+  .gantt-header{display:flex;padding:0 0 8px;border-bottom:1px solid #3a3a3c;margin-bottom:8px}
+  .gantt-label-hdr{width:180px;flex-shrink:0;font-size:11px;color:#86868b;font-weight:600}
+  .gantt-axis{flex:1;position:relative;height:16px}
+  .gantt-pnl-hdr{width:90px;text-align:right;font-size:11px;color:#86868b;font-weight:600}
+  .gantt-row{display:flex;align-items:center;padding:8px 0;border-bottom:1px solid #2c2c2e}
+  .gantt-row:hover{background:#2c2c2e33}
+  .gantt-label{width:180px;flex-shrink:0}
+  .gantt-track{flex:1;background:#2c2c2e;border-radius:4px;height:28px;position:relative;overflow:visible}
+  .gantt-today{position:absolute;top:-4px;bottom:-4px;width:2px;background:#ff9500;z-index:2;border-radius:1px}
+  .gantt-bar{position:absolute;top:4px;bottom:4px;border-radius:4px;display:flex;align-items:center;cursor:pointer;transition:opacity .2s;z-index:1}
+  .gantt-bar:hover{opacity:.85}
+  .gantt-pnl{width:90px;text-align:right;font-size:13px;font-weight:600;flex-shrink:0;line-height:1.3}
+
+  /* PnL */
+  .period-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .period-tab{background:#2c2c2e;border:1px solid #3a3a3c;border-radius:8px;padding:6px 14px;font-size:13px;color:#86868b;cursor:pointer}
+  .period-tab.active{background:#0071e322;border-color:#0071e3;color:#0071e3}
+  .pnl-summary{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+  .pnl-stat{background:#2c2c2e;border-radius:10px;padding:14px;text-align:center}
+  .pnl-stat-label{font-size:11px;color:#86868b;margin-bottom:4px}
+  .pnl-stat-val{font-size:20px;font-weight:700}
+  .table-wrap{overflow-x:auto;margin-top:16px}
+  .pnl-table{width:100%;border-collapse:collapse;font-size:13px}
+  .pnl-table th{background:#2c2c2e;padding:10px 12px;text-align:left;font-size:11px;color:#86868b;font-weight:600;white-space:nowrap}
+  .pnl-table td{padding:10px 12px;border-bottom:1px solid #2c2c2e;white-space:nowrap}
+  .pnl-table tr:hover td{background:#2c2c2e33}
+
+  @media(max-width:600px){
+    header{padding:12px 16px}
+    .main-tabs{padding:12px 16px 0;overflow-x:auto}
+    .tab-panel{padding:16px}
+    .strategy-grid{grid-template-columns:1fr 1fr}
+    .gantt-label{width:120px}
+  }
+</style>
+</head>
+<body>
+
+<!-- 密码锁屏 -->
+<div id="lock-screen">
+  <div class="lock-box">
+    <div style="font-size:40px;margin-bottom:12px;">🔐</div>
+    <h2>期权交易看板</h2>
+    <p>请输入访问密码</p>
+    <input type="password" id="pwd-input" placeholder="••••••" onkeydown="if(event.key==='Enter')checkPwd()">
+    <button onclick="checkPwd()">进入</button>
+    <div class="lock-err" id="lock-err"></div>
+  </div>
+</div>
+
+<!-- 主内容（锁屏前隐藏） -->
+<div id="main-content" style="display:none;">
+  <header>
+    <div>
+      <h1>📊 期权交易看板</h1>
+      <div class="header-meta">更新时间：2026-05-28 15:07:38 | 自选股 49 | 持仓 9 合约 | 历史成交 39 笔</div>
+    </div>
+    <button class="logout-btn" onclick="logout()">退出 ↩</button>
+  </header>
+
+  <div class="main-tabs">
+    <button class="main-tab active" onclick="switchTab(this,'tab-strategy')">🎯 期权策略</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-gantt')">📅 持仓甘特图</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-pnl')">💰 历史 P&amp;L</button>
+  </div>
+
+  <div id="tab-strategy" class="tab-panel active"><div class="strategy-grid">
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">DRAM</span>
+            <span class="price-label">$60.73 <span style="color:#34c759;font-size:12px;">+0.36%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 66.13</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">🐻</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">买 Put</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">FUTU</span>
+            <span class="price-label">$110.22 <span style="color:#34c759;font-size:12px;">+2.34%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">空头排列</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 23.87</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">NASA</span>
+            <span class="price-label">$41.89 <span style="color:#34c759;font-size:12px;">+0.67%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 82.78</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">🐻</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">买 Put</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">GOOG</span>
+            <span class="price-label">$384.83 <span style="color:#34c759;font-size:12px;">+-0.0%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.71</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">MU</span>
+            <span class="price-label">$928.41 <span style="color:#34c759;font-size:12px;">+3.63%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 70.92</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">QQQ</span>
+            <span class="price-label">$729.45 <span style="color:#ff3b30;font-size:12px;">-0.11%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 69.67</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">MRVL</span>
+            <span class="price-label">$198.7 <span style="color:#ff3b30;font-size:12px;">-4.59%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 62.08</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">RKLB</span>
+            <span class="price-label">$150.23 <span style="color:#34c759;font-size:12px;">+4.91%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 77.64</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">AVGO</span>
+            <span class="price-label">$421.86 <span style="color:#ff3b30;font-size:12px;">-0.04%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 48.42</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">ANET</span>
+            <span class="price-label">$154.31 <span style="color:#ff3b30;font-size:12px;">-2.34%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 56.68</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">META</span>
+            <span class="price-label">$635.25 <span style="color:#34c759;font-size:12px;">+3.74%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 62.44</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">VST</span>
+            <span class="price-label">$160.15 <span style="color:#ff3b30;font-size:12px;">-2.68%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 51.4</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">IREN</span>
+            <span class="price-label">$67.84 <span style="color:#34c759;font-size:12px;">+13.48%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 56.38</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">GLW</span>
+            <span class="price-label">$190.89 <span style="color:#ff3b30;font-size:12px;">-2.69%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 54.52</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">CRCL</span>
+            <span class="price-label">$102.64 <span style="color:#ff3b30;font-size:12px;">-1.47%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 36.26</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">AAPL</span>
+            <span class="price-label">$310.85 <span style="color:#34c759;font-size:12px;">+0.82%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 87.39</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">AMZN</span>
+            <span class="price-label">$271.85 <span style="color:#34c759;font-size:12px;">+2.47%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 46.7</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">INTC</span>
+            <span class="price-label">$121.77 <span style="color:#ff3b30;font-size:12px;">-1.42%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 57.01</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">NVDA</span>
+            <span class="price-label">$212.6 <span style="color:#ff3b30;font-size:12px;">-1.05%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 54.2</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">TSLA</span>
+            <span class="price-label">$440.36 <span style="color:#34c759;font-size:12px;">+1.56%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 64.16</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">HOOD</span>
+            <span class="price-label">$76.23 <span style="color:#34c759;font-size:12px;">+2.89%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 45.04</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">AMD</span>
+            <span class="price-label">$495.54 <span style="color:#ff3b30;font-size:12px;">-1.66%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 67.28</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">TSM</span>
+            <span class="price-label">$422.73 <span style="color:#34c759;font-size:12px;">+2.52%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 51.57</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">NOK</span>
+            <span class="price-label">$15.68 <span style="color:#ff3b30;font-size:12px;">-4.74%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 63.23</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">RDW</span>
+            <span class="price-label">$24.0 <span style="color:#34c759;font-size:12px;">+8.89%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 92.38</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">PLTR</span>
+            <span class="price-label">$132.51 <span style="color:#ff3b30;font-size:12px;">-2.99%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">空头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 47.34</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📉</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">熊市价差 (Bear Put Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">空头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">IVES</span>
+            <span class="price-label">$37.84 <span style="color:#ff3b30;font-size:12px;">-0.53%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 68.85</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">ASTS</span>
+            <span class="price-label">$129.6 <span style="color:#34c759;font-size:12px;">+8.27%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 83.19</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">🐻</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">买 Put</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">DXYZ</span>
+            <span class="price-label">$53.28 <span style="color:#ff3b30;font-size:12px;">-11.51%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 56.26</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">PL</span>
+            <span class="price-label">$50.48 <span style="color:#34c759;font-size:12px;">+4.47%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 71.35</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">COHR</span>
+            <span class="price-label">$380.18 <span style="color:#ff3b30;font-size:12px;">-0.31%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 58.72</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">SNDK</span>
+            <span class="price-label">$1589.94 <span style="color:#34c759;font-size:12px;">+0.02%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 59.42</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">📈</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">牛市价差 (Bull Call Spread)</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">SPX</span>
+            <span class="price-label">$7520.36 <span style="color:#34c759;font-size:12px;">+0.02%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 64.64</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">XOM</span>
+            <span class="price-label">$147.9 <span style="color:#ff3b30;font-size:12px;">-1.27%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 50.28</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">MSFT</span>
+            <span class="price-label">$412.67 <span style="color:#ff3b30;font-size:12px;">-0.81%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 49.66</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">CEG</span>
+            <span class="price-label">$288.68 <span style="color:#ff3b30;font-size:12px;">-4.27%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 35.53</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">SPY</span>
+            <span class="price-label">$750.46 <span style="color:#ff3b30;font-size:12px;">-0.02%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 65.84</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">GEV</span>
+            <span class="price-label">$1031.89 <span style="color:#ff3b30;font-size:12px;">-3.6%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 37.06</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">CLSK</span>
+            <span class="price-label">$18.04 <span style="color:#34c759;font-size:12px;">+5.31%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 71.27</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">🐻</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">买 Put</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">IONQ</span>
+            <span class="price-label">$65.4 <span style="color:#34c759;font-size:12px;">+2.8%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 64.59</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">BULL</span>
+            <span class="price-label">$6.22 <span style="color:#ff3b30;font-size:12px;">-0.64%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 21.05</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">🚀</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">买 Call</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超卖+低IV，期权便宜，博反弹</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">RDDT</span>
+            <span class="price-label">$154.19 <span style="color:#34c759;font-size:12px;">+6.6%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.48</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">SMH</span>
+            <span class="price-label">$595.5 <span style="color:#ff3b30;font-size:12px;">-1.1%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 62.9</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">BLOK</span>
+            <span class="price-label">$66.3 <span style="color:#34c759;font-size:12px;">+1.87%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 51.1</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">COIN</span>
+            <span class="price-label">$173.78 <span style="color:#ff3b30;font-size:12px;">-3.46%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 38.42</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">HIVE</span>
+            <span class="price-label">$4.46 <span style="color:#34c759;font-size:12px;">+8.78%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 74.68</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">🐻</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">买 Put</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
+          </div>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">CSCO</span>
+            <span class="price-label">$119.67 <span style="color:#34c759;font-size:12px;">+1.13%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 83.98</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:22px;margin-bottom:4px;">👁️</div>
+            <div style="font-size:14px;font-weight:600;color:#f0f0f0;">观望</div>
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+        </div></div></div>
+  <div id="tab-gantt" class="tab-panel">
+    <div class="gantt-container">
+      <div class="gantt-header">
+        <div class="gantt-label-hdr">合约</div>
+        <div class="gantt-axis"><div style="position:absolute;left:0.0%;font-size:10px;color:#86868b;transform:translateX(-50%);">03/29</div><div style="position:absolute;left:16.0%;font-size:10px;color:#86868b;transform:translateX(-50%);">04/11</div><div style="position:absolute;left:32.1%;font-size:10px;color:#86868b;transform:translateX(-50%);">04/24</div><div style="position:absolute;left:48.1%;font-size:10px;color:#86868b;transform:translateX(-50%);">05/07</div><div style="position:absolute;left:64.2%;font-size:10px;color:#86868b;transform:translateX(-50%);">05/20</div><div style="position:absolute;left:80.2%;font-size:10px;color:#86868b;transform:translateX(-50%);">06/02</div><div style="position:absolute;left:96.3%;font-size:10px;color:#86868b;transform:translateX(-50%);">06/15</div></div>
+        <div class="gantt-pnl-hdr">盈亏</div>
+      </div>
+      
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">TSM</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;margin-left:4px;">PUT</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$392.5 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.TSM260529P392500
+方向: PUT | 行权价: $392.5
+数量: -1手 | 成本: $1.68 | 现价: $0.0
+盈亏: +$121.38 (+-72.2%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#34c75988;border:1px solid #34c759;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">+$121</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#34c759;">+$121.38<br><span style="font-size:11px;">+-72.2%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">RKLB</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;margin-left:4px;">PUT</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$129.0 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.RKLB260529P129000
+方向: PUT | 行权价: $129.0
+数量: -1手 | 成本: $1.6 | 现价: $0.0
+盈亏: +$132.69 (+-82.9%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#34c75988;border:1px solid #34c759;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">+$133</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#34c759;">+$132.69<br><span style="font-size:11px;">+-82.9%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">MU</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;margin-left:4px;">PUT</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$775.0 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.MU260529P775000
+方向: PUT | 行权价: $775.0
+数量: -1手 | 成本: $7.57 | 现价: $0.0
+盈亏: +$645.72 (+-85.3%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#34c75988;border:1px solid #34c759;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">+$646</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#34c759;">+$645.72<br><span style="font-size:11px;">+-85.3%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">AVGO</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;font-size:10px;margin-left:4px;">CALL</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$410.0 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.AVGO260529C410000
+方向: CALL | 行权价: $410.0
+数量: -1手 | 成本: $18.63 | 现价: $0.0
+盈亏: +$397.41 (+-21.3%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#34c75988;border:1px solid #34c759;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">+$397</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#34c759;">+$397.41<br><span style="font-size:11px;">+-21.3%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">TSM</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;margin-left:4px;">PUT</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$385.0 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.TSM260529P385000
+方向: PUT | 行权价: $385.0
+数量: 1手 | 成本: $0.98 | 现价: $0.0
+盈亏: $-67.35 (-68.7%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#ff3b3088;border:1px solid #ff3b30;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">$-67</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#ff3b30;">$-67.35<br><span style="font-size:11px;">-68.7%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">RKLB</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;margin-left:4px;">PUT</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$109.0 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.RKLB260529P109000
+方向: PUT | 行权价: $109.0
+数量: 1手 | 成本: $0.11 | 现价: $0.0
+盈亏: $-6.22 (-56.5%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#ff3b3088;border:1px solid #ff3b30;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">$-6</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#ff3b30;">$-6.22<br><span style="font-size:11px;">-56.5%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">NASA</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;font-size:10px;margin-left:4px;">CALL</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$36.0 · 2026-06-18</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.NASA260618C36000
+方向: CALL | 行权价: $36.0
+数量: 1手 | 成本: $4.0 | 现价: $0.0
+盈亏: +$409.71 (+102.4%)
+到期: 2026-06-18"
+                 style="left:0.0%;width:100.0%;background:#34c75988;border:1px solid #34c759;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">+$410</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#34c759;">+$409.71<br><span style="font-size:11px;">+102.4%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">MU</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;margin-left:4px;">PUT</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$747.5 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.MU260529P747500
+方向: PUT | 行权价: $747.5
+数量: 1手 | 成本: $4.22 | 现价: $0.0
+盈亏: $-356.15 (-84.4%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#ff3b3088;border:1px solid #ff3b30;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">$-356</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#ff3b30;">$-356.15<br><span style="font-size:11px;">-84.4%</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-label">
+            <span style="font-weight:600;color:#f0f0f0;">AVGO</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;font-size:10px;margin-left:4px;">CALL</span>
+            <div style="font-size:11px;color:#86868b;margin-top:2px;">$400.0 · 2026-05-29</div>
+          </div>
+          <div class="gantt-track">
+            <div class="gantt-today" style="left:74.1%"></div>
+            <div class="gantt-bar" title="合约: US.AVGO260529C400000
+方向: CALL | 行权价: $400.0
+数量: 1手 | 成本: $27.38 | 现价: $0.0
+盈亏: $-438.31 (-16.0%)
+到期: 2026-05-29"
+                 style="left:0.0%;width:75.3%;background:#ff3b3088;border:1px solid #ff3b30;">
+              <span style="font-size:10px;padding:0 4px;white-space:nowrap;">$-438</span>
+            </div>
+          </div>
+          <div class="gantt-pnl" style="color:#ff3b30;">$-438.31<br><span style="font-size:11px;">-16.0%</span></div>
+        </div>
+    </div></div>
+  <div id="tab-pnl" class="tab-panel">
+    <div class="period-tabs"><button class="period-tab" onclick="switchPeriod(this,'p0')">今日</button><button class="period-tab" onclick="switchPeriod(this,'p1')">本周</button><button class="period-tab" onclick="switchPeriod(this,'p2')">本月</button><button class="period-tab" onclick="switchPeriod(this,'p3')">3个月</button><button class="period-tab active" onclick="switchPeriod(this,'p4')">全部</button></div>
+    <div id="p0" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无已结算的期权合约</div></div><div id="p1" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无已结算的期权合约</div></div><div id="p2" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无已结算的期权合约</div></div><div id="p3" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">总盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">100.0%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$0.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">总手续费(估)</div>
+            <div class="pnl-stat-val" style="color:#86868b;">-$1.30</div>
+          </div>
+        </div><div style="padding:12px 0;">
+            <div style="display:flex;align-items:center;margin-bottom:6px;">
+              <div style="width:50px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+              <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+              </div>
+              <div style="width:70px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$218.0</div>
+            </div></div><div class="table-wrap"><table class="pnl-table"><thead><tr>
+          <th>日期</th><th>标的</th><th>合约</th><th>方向</th>
+          <th>买入价</th><th>卖出价</th><th>手数</th><th>盈亏</th><th>手续费(估)</th>
+        </tr></thead><tbody><tr>
+              <td>2026-03-21</td>
+              <td style="font-weight:600;">MU</td>
+              <td style="font-size:11px;color:#86868b;">$370.0 exp 2026-03-20</td>
+              <td><span class="badge" style="background:#ff3b3022;color:#ff3b30;">PUT</span></td>
+              <td>$0.0</td>
+              <td>$2.18</td>
+              <td>1</td>
+              <td style="color:#34c759;font-weight:600;">+$218.0</td>
+              <td style="color:#86868b;">-$1.3</td>
+            </tr></tbody></table></div></div><div id="p4" class="period-panel" style="display:block">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">总盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">100.0%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$218.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$0.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">总手续费(估)</div>
+            <div class="pnl-stat-val" style="color:#86868b;">-$1.30</div>
+          </div>
+        </div><div style="padding:12px 0;">
+            <div style="display:flex;align-items:center;margin-bottom:6px;">
+              <div style="width:50px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+              <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+              </div>
+              <div style="width:70px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$218.0</div>
+            </div></div><div class="table-wrap"><table class="pnl-table"><thead><tr>
+          <th>日期</th><th>标的</th><th>合约</th><th>方向</th>
+          <th>买入价</th><th>卖出价</th><th>手数</th><th>盈亏</th><th>手续费(估)</th>
+        </tr></thead><tbody><tr>
+              <td>2026-03-21</td>
+              <td style="font-weight:600;">MU</td>
+              <td style="font-size:11px;color:#86868b;">$370.0 exp 2026-03-20</td>
+              <td><span class="badge" style="background:#ff3b3022;color:#ff3b30;">PUT</span></td>
+              <td>$0.0</td>
+              <td>$2.18</td>
+              <td>1</td>
+              <td style="color:#34c759;font-weight:600;">+$218.0</td>
+              <td style="color:#86868b;">-$1.3</td>
+            </tr></tbody></table></div></div></div>
+</div>
+
+<script>
+const PWD_HASH = 'af587962397c6eca8959687804e0203d4512b743c2d770d459628b4b27b89244';
+
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+async function checkPwd() {
+  const val = document.getElementById('pwd-input').value;
+  const h = await sha256(val);
+  if (h === PWD_HASH) {
+    sessionStorage.setItem('options_auth', PWD_HASH);
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+  } else {
+    document.getElementById('lock-err').textContent = '密码错误，请重试';
+    document.getElementById('pwd-input').value = '';
+    document.getElementById('pwd-input').focus();
+    setTimeout(()=>document.getElementById('lock-err').textContent='', 3000);
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('options_auth');
+  location.reload();
+}
+
+function switchTab(btn, panelId) {
+  document.querySelectorAll('.main-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+
+function switchPeriod(btn, panelId) {
+  document.querySelectorAll('.period-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.period-panel').forEach(p=>p.style.display='none');
+  btn.classList.add('active');
+  document.getElementById(panelId).style.display = 'block';
+}
+
+// 自动检查 session
+(async function(){
+  if (sessionStorage.getItem('options_auth') === PWD_HASH) {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>
