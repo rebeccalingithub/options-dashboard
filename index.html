@@ -44,6 +44,11 @@
   .badge{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500}
   .strategy-box{background:#1c1c1e;border-radius:8px;padding:10px;margin-top:8px}
 
+  /* Gantt summary */
+  .gantt-summary{display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+  .gantt-summary-item{background:#2c2c2e;border-radius:10px;padding:14px 22px;text-align:center;min-width:150px;border:1px solid #3a3a3c}
+  .gantt-summary-label{font-size:11px;color:#86868b;margin-bottom:4px}
+  .gantt-summary-val{font-size:22px;font-weight:700}
   /* Gantt */
   .gantt-container{font-size:13px}
   .gantt-header{display:flex;padding:0 0 8px;border-bottom:1px solid #3a3a3c;margin-bottom:8px}
@@ -988,6 +993,16 @@
         </div></div>
         </div></div>
   <div id="tab-gantt" class="tab-panel">
+    <div class="gantt-summary">
+      <div class="gantt-summary-item">
+        <div class="gantt-summary-label">持仓合约数</div>
+        <div class="gantt-summary-val">13 <span style="font-size:13px;font-weight:400;color:#86868b;">张</span></div>
+      </div>
+      <div class="gantt-summary-item">
+        <div class="gantt-summary-label">持仓总浮动盈亏</div>
+        <div class="gantt-summary-val" style="color:#34c759;">+$1050.17</div>
+      </div>
+    </div>
     <div class="gantt-container">
       <div class="gantt-header">
         <div class="gantt-label-hdr">组合 / 合约</div>
@@ -1248,7 +1263,220 @@
           </div>
         </div>
     </div></div>
-  <div id="tab-pnl" class="tab-panel"><div class="period-tabs"><button class="period-tab" onclick="switchPeriod(this,'p0')">今日</button><button class="period-tab" onclick="switchPeriod(this,'p1')">本周</button><button class="period-tab" onclick="switchPeriod(this,'p2')">本月</button><button class="period-tab" onclick="switchPeriod(this,'p3')">3个月</button><button class="period-tab active" onclick="switchPeriod(this,'p4')">全部</button></div><div id="p0" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无期权交易记录</div></div><div id="p1" class="period-panel" style="display:none">
+  <div id="tab-pnl" class="tab-panel"><div class="period-tabs"><button class="period-tab" onclick="switchPeriod(this,'p0')">上周</button><button class="period-tab" onclick="switchPeriod(this,'p1')">本周</button><button class="period-tab" onclick="switchPeriod(this,'p2')">本月</button><button class="period-tab" onclick="switchPeriod(this,'p3')">本季度</button><button class="period-tab active" onclick="switchPeriod(this,'p4')">全部</button></div><div id="p0" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">已实现总盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$835.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">80.0%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">组合数（已计算）</div>
+            <div class="pnl-stat-val">5<span style="font-size:12px;color:#86868b;"> / 6</span></div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 数据来源：富途 history_deal_list_query（真实成交记录，含开仓价 / 平仓价）。已按（标的 × 到期日）自动识别价差组合，并计算每条腿的实际盈亏。"可计算"统计已同时有开仓和平仓记录的合约；当前持仓或到期归零的合约单独标注。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$853.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:28.8%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-246.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:26.7%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$228.0</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">组合 4腿</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$157.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$5.20 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$685.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $22.84 / 平 $0.0 → 行权内在价 32.54</span>
+                  <span style="color:#34c759;margin-left:auto;">+$970.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$690.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $19.35 / 平 $0.0 → 行权内在价 27.54</span>
+                  <span style="color:#34c759;margin-left:auto;">+$819.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$695.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $13.45 / 平 $0.0 → 行权内在价 22.54</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-909.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$700.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $10.31 / 平 $0.0 → 行权内在价 17.54</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-723.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-23</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$853.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$575.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $2.52 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-252.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$655.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $11.05 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$1105.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-29 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$52.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.81 / 平 $3.9</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-91.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $8.61 / 平 $7.18</span>
+                  <span style="color:#34c759;margin-left:auto;">+$143.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-22 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#ff3b30;">$-298.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$377.5</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.01 / 平 $1.76</span>
+                  <span style="color:#34c759;margin-left:auto;">+$75.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$385.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.99 / 平 $5.72</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-373.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">熊市价差 Bear Put Spread</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-05-20 · 最后成交 2026-05-21</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$71.00</div>
+                  <div style="font-size:11px;color:#86868b;">-$2.60 手续费(估)</div>
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$695.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $1.56 / 平 $0.0</span>
+                  <span style="color:#ff3b30;margin-left:auto;">$-156.00</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
+                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
+                  <span style="color:#aeaeb2;">$699.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $2.27 / 平 $0.0</span>
+                  <span style="color:#34c759;margin-left:auto;">+$227.00</span>
+                </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
+                <div>
+                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">NASA</span>
+                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">单腿 CALL</span>
+                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-06-18 · 最后成交 2026-05-18</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:16px;font-weight:700;color:#86868b;">开仓价格待确认</div>
+                  
+                </div>
+              </div>
+              
+                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
+                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
+                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
+                  <span style="color:#aeaeb2;">$36.0</span>
+                  <span style="color:#86868b;margin-left:4px;">开 $4.0 / 持仓中</span>
+                  
+                </div>
+            </div></div><div id="p1" class="period-panel" style="display:none">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">已实现总盈亏</div>
@@ -1986,15 +2214,15 @@
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">已实现总盈亏</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$2401.00</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$2183.00</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">胜率</div>
-            <div class="pnl-stat-val">93.8%</div>
+            <div class="pnl-stat-val">93.3%</div>
           </div>
           <div class="pnl-stat">
             <div class="pnl-stat-label">组合数（已计算）</div>
-            <div class="pnl-stat-val">16<span style="font-size:12px;color:#86868b;"> / 23</span></div>
+            <div class="pnl-stat-val">15<span style="font-size:12px;color:#86868b;"> / 22</span></div>
           </div>
         </div>
         <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
@@ -2005,19 +2233,19 @@
                   <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
                     <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
                   </div>
-                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$2114.0</div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$1896.0</div>
                 </div>
                 <div style="display:flex;align-items:center;margin-bottom:6px;">
                   <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
                   <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
-                    <div style="width:19.2%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                    <div style="width:21.4%;height:100%;background:#34c75988;border-radius:3px;"></div>
                   </div>
                   <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$405.0</div>
                 </div>
                 <div style="display:flex;align-items:center;margin-bottom:6px;">
                   <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
                   <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
-                    <div style="width:5.6%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                    <div style="width:6.2%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
                   </div>
                   <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-118.0</div>
                 </div></div>
@@ -2684,27 +2912,6 @@
                   <span style="color:#aeaeb2;">$622.0</span>
                   <span style="color:#86868b;margin-left:4px;">开 $25.3 / 平 $0.0 → 行权内在价 33.11</span>
                   <span style="color:#ff3b30;margin-left:auto;">$-781.00</span>
-                </div>
-            </div>
-            <div class="pnl-combo-card">
-              <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;">
-                <div>
-                  <span style="font-size:15px;font-weight:700;color:#f0f0f0;">MU</span>
-                  <span style="margin-left:8px;font-size:12px;color:#0071e3;">单腿 PUT</span>
-                  <div style="font-size:11px;color:#86868b;margin-top:2px;">到期 2026-03-20 · 最后成交 2026-03-21</div>
-                </div>
-                <div style="text-align:right;">
-                  <div style="font-size:16px;font-weight:700;color:#34c759;">+$218.00</div>
-                  <div style="font-size:11px;color:#86868b;">-$1.30 手续费(估)</div>
-                </div>
-              </div>
-              
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$370.0</span>
-                  <span style="color:#86868b;margin-left:4px;">开 $2.18 / 平 $0.0</span>
-                  <span style="color:#34c759;margin-left:auto;">+$218.00</span>
                 </div>
             </div></div><div id="p4" class="period-panel" style="display:block">
         <div class="pnl-summary">
