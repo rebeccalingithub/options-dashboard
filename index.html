@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>期权交易看板</title>
+<title>美股交易看板</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:#1c1c1e;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;min-height:100vh}
@@ -110,7 +110,7 @@
 <div id="lock-screen">
   <div class="lock-box">
     <div style="font-size:40px;margin-bottom:12px;">🔐</div>
-    <h2>期权交易看板</h2>
+    <h2>美股交易看板</h2>
     <p>请输入访问密码</p>
     <input type="password" id="pwd-input" placeholder="••••••" onkeydown="if(event.key==='Enter')checkPwd()">
     <button onclick="checkPwd()">进入</button>
@@ -122,17 +122,17 @@
 <div id="main-content" style="display:none;">
   <header>
     <div>
-      <h1>📊 期权交易看板</h1>
-      <div class="header-meta">更新时间：2026-06-04 08:20:03 | 自选股 46 | 持仓 24 合约 | 历史成交 154 笔</div>
+      <h1>📊 美股交易看板</h1>
+      <div class="header-meta">更新时间：2026-06-04 09:48:08 | 自选股 46 | 持仓 24 合约 | 历史成交 154 笔</div>
     </div>
     <button class="logout-btn" onclick="logout()">退出 ↩</button>
   </header>
 
   <div class="main-tabs">
-    <button class="main-tab active" onclick="switchTab(this,'tab-strategy')">🎯 期权策略</button>
-    <button class="main-tab" onclick="switchTab(this,'tab-gantt')">📅 持仓甘特图</button>
-    <button class="main-tab" onclick="switchTab(this,'tab-pnl')">💰 历史 P&amp;L</button>
-    <button class="main-tab" onclick="switchTab(this,'tab-stocks')">📈 正股</button>
+    <button class="main-tab active" onclick="switchTab(this,'tab-strategy')">🎯 期权策略推荐</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-gantt')">📅 期权持仓甘特图</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-pnl')">💰 期权P&amp;L</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-stocks')">📈 正股P&amp;L</button>
   </div>
 
   <div id="tab-strategy" class="tab-panel active">
@@ -174,7 +174,7 @@
                   <div class="rec-legs">SELL PUT $172.5 @$3.50  /  BUY  PUT $170.0 @$2.67</div>
                   <div class="rec-be">盈亏平衡点：$171.67</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#34c759;">78%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#34c759;">77%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$83</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$167</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$167</div></div>
@@ -691,7 +691,7 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">NVDA</span>
-            <span class="price-label">$214.75 <span style="color:#ff3b30;font-size:12px;">-3.62%</span></span>
+            <span class="price-label">$214.5 <span style="color:#ff3b30;font-size:12px;">-3.63%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
@@ -1129,7 +1129,7 @@
       </div>
       <div class="gantt-summary-item">
         <div class="gantt-summary-label">持仓总浮动盈亏</div>
-        <div class="gantt-summary-val" style="color:#34c759;">+$572.32</div>
+        <div class="gantt-summary-val" style="color:#34c759;">+$572.51</div>
       </div>
     </div>
     <div class="gantt-container">
@@ -1375,12 +1375,12 @@
 到期：2026-06-05
   PUT $920.0 qty:1 cost:$5.81
   PUT $945.0 qty:-1 cost:$8.64
-合计盈亏：+$192.82"
+合计盈亏：+$193.01"
                    style="left:7.1%;width:21.4%;background:#34c75988;border:1px solid #34c759;border-radius:6px;">
                 <span style="font-size:10px;padding:0 6px;white-space:nowrap;font-weight:600;">+$193</span>
               </div>
             </div>
-            <div class="gantt-pnl" style="color:#34c759;">+$192.82<br><span style="font-size:11px;">+-134.5%</span></div>
+            <div class="gantt-pnl" style="color:#34c759;">+$193.01<br><span style="font-size:11px;">+-134.5%</span></div>
           </div>
           <div class="gantt-legs">
             
@@ -1394,7 +1394,7 @@
               <span style="color:#86868b;font-size:11px;width:70px;flex-shrink:0;">卖出 Short</span>
               <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;">PUT</span>
               <span style="font-size:11px;color:#aeaeb2;margin-left:6px;">$945.0 · -1手 · 成本$8.64</span>
-              <span style="margin-left:auto;font-size:11px;color:#34c759;">+$582.50</span>
+              <span style="margin-left:auto;font-size:11px;color:#34c759;">+$582.69</span>
             </div>
           </div>
         </div>
@@ -7193,7 +7193,1556 @@
                   <span style="color:#ff3b30;margin-left:auto;">$-204.00</span>
                 </div>
             </div></div></div>
-  <div id="tab-stocks" class="tab-panel"><div style="text-align:center;padding:40px;color:#86868b;">暂无正股交易记录（需重新运行 build_options_data.py 采集数据）</div></div>
+  <div id="tab-stocks" class="tab-panel"><div class="period-tabs"><button class="period-tab" onclick="switchPeriod2(this,'sp0')">上周</button><button class="period-tab" onclick="switchPeriod2(this,'sp1')">本周</button><button class="period-tab" onclick="switchPeriod2(this,'sp2')">本月</button><button class="period-tab" onclick="switchPeriod2(this,'sp3')">本季度</button><button class="period-tab" onclick="switchPeriod2(this,'sp4')">今年</button><button class="period-tab active" onclick="switchPeriod2(this,'sp5')">全部</button></div><div id="sp0" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无已完成正股交易</div></div><div id="sp1" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">毛盈亏</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-20.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">手续费</div>
+            <div class="pnl-stat-val" style="color:#ff9500;">-$2.54</div>
+          </div>
+          <div class="pnl-stat pnl-stat-net">
+            <div class="pnl-stat-label">净盈亏</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-22.54</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">0.0%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">完成笔数</div>
+            <div class="pnl-stat-val">1</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$0.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-22.54</div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 只显示已完成交易（持仓归零）。浮动中持仓不计入。净盈亏 = 毛盈亏 − 手续费。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-22.5</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-20.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.54</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-22.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-06-02</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$742.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$732.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-1.35%</span></div>
+              </div>
+            </div></div><div id="sp2" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">毛盈亏</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-20.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">手续费</div>
+            <div class="pnl-stat-val" style="color:#ff9500;">-$2.54</div>
+          </div>
+          <div class="pnl-stat pnl-stat-net">
+            <div class="pnl-stat-label">净盈亏</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-22.54</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">0.0%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">完成笔数</div>
+            <div class="pnl-stat-val">1</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$0.00</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-22.54</div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 只显示已完成交易（持仓归零）。浮动中持仓不计入。净盈亏 = 毛盈亏 − 手续费。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-22.5</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-20.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.54</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-22.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-06-02</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$742.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$732.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-1.35%</span></div>
+              </div>
+            </div></div><div id="sp3" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">毛盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$39330.70</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">手续费</div>
+            <div class="pnl-stat-val" style="color:#ff9500;">-$23.05</div>
+          </div>
+          <div class="pnl-stat pnl-stat-net">
+            <div class="pnl-stat-label">净盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$39307.65</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">90.9%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">完成笔数</div>
+            <div class="pnl-stat-val">11</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$3933.20</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-24.37</div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 只显示已完成交易（持仓归零）。浮动中持仓不计入。净盈亏 = 毛盈亏 − 手续费。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$29709.2</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:31.4%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$9314.5</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MRVL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:1.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$299.4</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">AVGO</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-24.4</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">AAPL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$8.9</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MRVL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$301.50</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$299.45</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-27</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$199.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$300.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+50.38%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1327.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.06</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$1322.94</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$717.4902</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$730.5</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">102 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.81%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$4300.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.96</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$4297.04</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$687.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$709.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">200 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+3.13%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-22.51</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.86</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-24.37</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-14</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$432.51</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$410.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-5.2%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1900.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.46</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$1898.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-16</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-23</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$681.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$700.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.79%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10500.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.38</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$10498.62</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-16</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$555.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$660.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+18.92%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1000.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.39</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$998.61</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$655.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$665.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.53%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$19213.75</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.21</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$19210.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-25</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$421.25</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$517.3188</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">200 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+22.81%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$200.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.33</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$198.67</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-24</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-24</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$632.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$634.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.32%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$600.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.30</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$598.70</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-23</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$616.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$622.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.97%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">AAPL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10.96</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$8.91</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-01</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-08</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$254.59</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$260.07</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.15%</span></div>
+              </div>
+            </div></div><div id="sp4" class="period-panel" style="display:none">
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">毛盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$39411.84</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">手续费</div>
+            <div class="pnl-stat-val" style="color:#ff9500;">-$50.36</div>
+          </div>
+          <div class="pnl-stat pnl-stat-net">
+            <div class="pnl-stat-label">净盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$39361.48</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">77.3%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">完成笔数</div>
+            <div class="pnl-stat-val">22</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$2323.94</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-29.10</div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 只显示已完成交易（持仓归零）。浮动中持仓不计入。净盈亏 = 毛盈亏 − 手续费。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$29747.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:31.4%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$9348.5</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MRVL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:1.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$299.4</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">TSM</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.2%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$47.1</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">NVDA</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$36.9</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-34.0</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">HOOD</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-33.1</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">VST</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-27.1</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">AVGO</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-24.4</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">TSLA</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-16.9</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">META</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$9.2</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">AAPL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$8.9</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MRVL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$301.50</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$299.45</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-27</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$199.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$300.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+50.38%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1327.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.06</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$1322.94</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$717.4902</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$730.5</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">102 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.81%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$4300.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.96</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$4297.04</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$687.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$709.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">200 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+3.13%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-22.51</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.86</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-24.37</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-14</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$432.51</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$410.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-5.2%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1900.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.46</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$1898.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-16</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-23</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$681.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$700.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.79%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10500.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.38</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$10498.62</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-16</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$555.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$660.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+18.92%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1000.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.39</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$998.61</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$655.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$665.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.53%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$19213.75</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.21</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$19210.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-25</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$421.25</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$517.3188</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">200 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+22.81%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$32.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.00</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$30.00</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-03-17</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-25</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$454.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$470.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+3.52%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$200.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.33</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$198.67</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-24</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-24</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$632.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$634.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.32%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$600.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.30</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$598.70</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-23</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$616.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$622.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.97%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$36.03</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.02</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$34.01</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-02-26</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$611.97</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$648.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+5.89%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">NVDA</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$39.94</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$36.89</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-02-11</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$189.815</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$199.8</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">4 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+5.26%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">META</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$12.24</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$9.19</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-26</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$667.01</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$673.13</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.92%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">AAPL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10.96</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$8.91</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-01</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-08</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$254.59</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$260.07</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.15%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$12.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$9.95</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-03-05</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-07</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$300.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$306.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.0%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10.84</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.02</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$7.82</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-07</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-03-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$371.5813</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$377.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.46%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">TSM</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$49.11</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.03</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$47.08</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-07</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-03-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$320.945</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$345.5</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+7.65%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-39.96</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.04</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-44.00</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-30</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-16</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$319.8767</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$306.5579</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-4.16%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">TSLA</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-14.94</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.01</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-16.95</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-02-12</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-13</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$428.407</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$413.47</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-3.49%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">VST</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-25.04</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.01</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-27.05</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-29</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-05</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$167.19</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$142.15</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-14.98%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">HOOD</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-31.08</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.03</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-33.11</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-06</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-01-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$121.7092</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$106.17</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-12.77%</span></div>
+              </div>
+            </div></div><div id="sp5" class="period-panel" style="display:block">
+    <div style="background:#2c2c2e;border:1px solid #3a3a3c;border-radius:12px;padding:20px 20px 12px;margin-bottom:20px;">
+      <div style="font-size:14px;font-weight:600;color:#f0f0f0;margin-bottom:12px;">📈 累计净盈亏走势</div>
+      <svg viewBox="0 0 800 140" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <line x1="72" y1="108.0" x2="776" y2="108.0" stroke="#3a3a3c" stroke-width="1"/><text x="66" y="108.0" fill="#86868b" font-size="8" text-anchor="end" dominant-baseline="middle">$-6165</text><line x1="72" y1="87.0" x2="776" y2="87.0" stroke="#3a3a3c" stroke-width="1"/><text x="66" y="87.0" fill="#86868b" font-size="8" text-anchor="end" dominant-baseline="middle">+$6139</text><line x1="72" y1="66.0" x2="776" y2="66.0" stroke="#3a3a3c" stroke-width="1"/><text x="66" y="66.0" fill="#86868b" font-size="8" text-anchor="end" dominant-baseline="middle">+$18442</text><line x1="72" y1="45.0" x2="776" y2="45.0" stroke="#3a3a3c" stroke-width="1"/><text x="66" y="45.0" fill="#86868b" font-size="8" text-anchor="end" dominant-baseline="middle">+$30745</text><line x1="72" y1="24.0" x2="776" y2="24.0" stroke="#3a3a3c" stroke-width="1"/><text x="66" y="24.0" fill="#86868b" font-size="8" text-anchor="end" dominant-baseline="middle">+$43049</text>
+        <line x1="72" y1="97.5" x2="776" y2="97.5" stroke="#86868b" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+        <polygon points="72.0,97.5 72.0,97.7 99.1,97.9 126.2,98.5 153.2,98.7 180.3,99.1 207.4,99.2 234.5,99.5 261.5,99.5 288.6,99.5 315.7,99.6 342.8,99.7 369.8,99.7 396.9,99.7 424.0,99.8 451.1,99.9 478.2,99.4 505.2,99.4 532.3,99.4 559.4,99.3 586.5,98.2 613.5,97.9 640.6,97.8 667.7,63.4 694.8,45.4 721.8,42.2 748.9,34.9 776.0,32.1 776.0,97.5" fill="#34c759" fill-opacity="0.12"/>
+        <polyline points="72.0,97.7 99.1,97.9 126.2,98.5 153.2,98.7 180.3,99.1 207.4,99.2 234.5,99.5 261.5,99.5 288.6,99.5 315.7,99.6 342.8,99.7 369.8,99.7 396.9,99.7 424.0,99.8 451.1,99.9 478.2,99.4 505.2,99.4 532.3,99.4 559.4,99.3 586.5,98.2 613.5,97.9 640.6,97.8 667.7,63.4 694.8,45.4 721.8,42.2 748.9,34.9 776.0,32.1" fill="none" stroke="#34c759" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="776.0" cy="32.1" r="4" fill="#34c759"/>
+        <text x="776.0" y="12.1" fill="#34c759" font-size="10" text-anchor="end" font-weight="600">+$38286.12</text>
+        <text x="72.0" y="134" fill="#86868b" font-size="8" text-anchor="middle">10/21</text><text x="207.4" y="134" fill="#86868b" font-size="8" text-anchor="middle">12/01</text><text x="342.8" y="134" fill="#86868b" font-size="8" text-anchor="middle">01/20</text><text x="478.2" y="134" fill="#86868b" font-size="8" text-anchor="middle">03/03</text><text x="613.5" y="134" fill="#86868b" font-size="8" text-anchor="middle">04/24</text><text x="748.9" y="134" fill="#86868b" font-size="8" text-anchor="middle">05/30</text><text x="776.0" y="134" fill="#86868b" font-size="8" text-anchor="middle">06/03</text>
+      </svg>
+    </div>
+        <div class="pnl-summary">
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">毛盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$38383.71</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">手续费</div>
+            <div class="pnl-stat-val" style="color:#ff9500;">-$97.59</div>
+          </div>
+          <div class="pnl-stat pnl-stat-net">
+            <div class="pnl-stat-label">净盈亏</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$38286.12</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">胜率</div>
+            <div class="pnl-stat-val">54.3%</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">完成笔数</div>
+            <div class="pnl-stat-val">35</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均盈利</div>
+            <div class="pnl-stat-val" style="color:#34c759;">+$2092.34</div>
+          </div>
+          <div class="pnl-stat">
+            <div class="pnl-stat-label">平均亏损</div>
+            <div class="pnl-stat-val" style="color:#ff3b30;">$-91.77</div>
+          </div>
+        </div>
+        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
+          ℹ️ 只显示已完成交易（持仓归零）。浮动中持仓不计入。净盈亏 = 毛盈亏 − 手续费。
+        </div><div style="padding:8px 0 16px;">
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MU</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$29993.8</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">QQQ</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:31.2%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$9348.5</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">CLSK</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:1.2%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-351.9</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">MRVL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:1.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$299.4</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">IREN</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.6%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-191.3</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">VST</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.6%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-179.1</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">BMNR</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.5%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-143.8</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">TSLA</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.4%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-118.6</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">CONL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.4%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-115.8</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">TSM</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.3%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-89.8</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">GOOG</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.2%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-57.6</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">META</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-33.8</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">HOOD</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-33.1</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">NVDA</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-26.1</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">AVGO</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.1%;height:100%;background:#ff3b3088;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#ff3b30;flex-shrink:0;">$-24.4</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">AAPL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$8.9</div>
+                </div>
+                <div style="display:flex;align-items:center;margin-bottom:6px;">
+                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">BULL</div>
+                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
+                    <div style="width:0.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
+                  </div>
+                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$0.7</div>
+                </div></div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MRVL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$301.50</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$299.45</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-27</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$199.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$300.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+50.38%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1327.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.06</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$1322.94</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-06-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$717.4902</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$730.5</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">102 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.81%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$4300.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.96</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$4297.04</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$687.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$709.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">200 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+3.13%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">AVGO</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-22.51</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.86</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-24.37</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-14</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-30</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$432.51</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$410.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-5.2%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1900.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.46</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$1898.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-16</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-23</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$681.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$700.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.79%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10500.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.38</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$10498.62</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-16</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$555.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$660.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+18.92%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$1000.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.39</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$998.61</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$655.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$665.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+1.53%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$19213.75</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.21</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$19210.54</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-25</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-05-09</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$421.25</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$517.3188</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">200 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+22.81%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$32.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.00</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$30.00</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-03-17</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-25</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$454.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$470.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+3.52%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$200.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.33</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$198.67</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-24</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-24</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$632.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$634.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.32%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$600.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$1.30</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$598.70</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-23</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$616.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$622.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">100 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.97%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">QQQ</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$36.03</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.02</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$34.01</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-02-26</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$611.97</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$648.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+5.89%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">NVDA</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$39.94</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$36.89</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-02-11</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$189.815</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$199.8</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">4 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+5.26%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">META</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$12.24</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$9.19</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-26</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$667.01</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$673.13</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.92%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">AAPL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$10.96</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$8.91</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-04-01</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-08</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$254.59</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$260.07</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.15%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$12.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.05</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$9.95</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-03-05</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-04-07</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$300.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$306.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+2.0%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$217.50</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.03</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$213.47</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-12-22</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-03-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$322.6256</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$377.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">4 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+16.85%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">TSM</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$49.11</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.03</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$47.08</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-07</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-03-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$320.945</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$345.5</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+7.65%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">GOOG</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-60.50</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$7.07</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-67.57</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-11-24</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-16</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$318.398</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$306.2987</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">5 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-3.8%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">TSLA</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-14.94</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.01</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-16.95</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-02-12</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-13</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$428.407</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$413.47</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-3.49%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">NVDA</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-7.40</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.03</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-9.43</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-12-23</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-06</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$184.28</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$180.58</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-2.01%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">VST</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-25.04</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.01</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-27.05</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-29</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-02-05</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$167.19</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$142.15</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-14.98%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">HOOD</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-31.08</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.03</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-33.11</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2026-01-06</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-01-20</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$121.7092</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$106.17</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">2 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-12.77%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">META</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-40.94</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.01</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-42.95</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-30</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2026-01-14</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$661.9</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$620.96</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">1 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-6.19%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">VST</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-37.95</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.03</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-39.98</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-12-12</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-12-18</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$176.93</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$164.28</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-7.15%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">MU</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$44.21</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.04</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$41.17</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-27</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-12-03</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$224.33</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$239.0667</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+6.57%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">IREN</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-186.17</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$5.09</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-191.26</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-15</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-12-02</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$71.2</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$47.9288</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">8 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-32.68%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">NVDA</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-49.56</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.04</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-53.60</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-28</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-12-01</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$192.75</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$176.2311</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-8.57%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">TSM</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-130.75</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$6.11</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-136.86</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-14</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-11-28</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$295.5</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$282.425</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">10 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-4.42%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">TSLA</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-97.60</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.04</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-101.64</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-11-04</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-11-28</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$453.4743</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$420.9426</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">3 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-7.17%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">BMNR</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-139.72</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$4.11</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-143.83</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-27</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-11-14</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$53.0</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$39.028</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">10 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-26.36%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">CLSK</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-349.60</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.25</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-351.85</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-15</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-11-12</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$22.8</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$14.06</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">40 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-38.33%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">CONL</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-112.72</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.08</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-115.80</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-27</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-11-11</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$40.9</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$29.628</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">10 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-27.56%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">VST</span>
+                <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-109.05</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$3.05</span>
+                <span style="font-size:12px;font-weight:600;color:#ff3b30;background:#ff3b3018;border:1px solid #ff3b3044;border-radius:6px;padding:1px 7px;">净 $-112.10</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-16</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-10-21</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$212.81</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$191.0</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">5 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#ff3b30;">-10.25%</span></div>
+              </div>
+            </div>
+            <div class="pnl-combo-card">
+              <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+                <span style="font-size:18px;font-weight:700;color:#f0f0f0;">BULL</span>
+                <span style="font-size:15px;font-weight:700;color:#34c759;">+$3.00</span>
+                <span style="font-size:12px;color:#ff9500;">手续费 −$2.31</span>
+                <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$0.69</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;font-size:12px;">
+                <div style="color:#86868b;">买入日期 <span style="color:#aeaeb2;">2025-10-14</span></div>
+                <div style="color:#86868b;">卖出日期 <span style="color:#aeaeb2;">2025-10-21</span></div>
+                <div style="color:#86868b;">买入均价 <span style="color:#aeaeb2;">$11.34</span></div>
+                <div style="color:#86868b;">卖出均价 <span style="color:#aeaeb2;">$11.4</span></div>
+                <div style="color:#86868b;">股数 <span style="color:#aeaeb2;">50 股</span></div>
+                <div style="color:#86868b;">涨跌幅 <span style="color:#34c759;">+0.53%</span></div>
+              </div>
+            </div></div></div>
 </div>
 
 <script>
