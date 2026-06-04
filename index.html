@@ -132,6 +132,7 @@
     <button class="main-tab active" onclick="switchTab(this,'tab-strategy')">🎯 期权策略</button>
     <button class="main-tab" onclick="switchTab(this,'tab-gantt')">📅 持仓甘特图</button>
     <button class="main-tab" onclick="switchTab(this,'tab-pnl')">💰 历史 P&amp;L</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-stocks')">📈 正股</button>
   </div>
 
   <div id="tab-strategy" class="tab-panel active">
@@ -7192,6 +7193,7 @@
                   <span style="color:#ff3b30;margin-left:auto;">$-204.00</span>
                 </div>
             </div></div></div>
+  <div id="tab-stocks" class="tab-panel"><div style="text-align:center;padding:40px;color:#86868b;">暂无正股交易记录（需重新运行 build_options_data.py 采集数据）</div></div>
 </div>
 
 <script>
@@ -7230,10 +7232,15 @@ function switchTab(btn, panelId) {
 }
 
 function switchPeriod(btn, panelId) {
-  document.querySelectorAll('.period-tab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.period-panel').forEach(p=>p.style.display='none');
+  const wrap = btn.closest('.tab-panel');
+  wrap.querySelectorAll('.period-tab').forEach(b=>b.classList.remove('active'));
+  wrap.querySelectorAll('.period-panel').forEach(p=>p.style.display='none');
   btn.classList.add('active');
   document.getElementById(panelId).style.display = 'block';
+}
+
+function switchPeriod2(btn, panelId) {
+  switchPeriod(btn, panelId);
 }
 
 // 自动检查 session
