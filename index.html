@@ -123,7 +123,7 @@
   <header>
     <div>
       <h1>📊 美股交易看板</h1>
-      <div class="header-meta">更新时间：2026-07-16 10:02:10 | 自选股 35 | 持仓 2 合约 | 历史成交 213 笔</div>
+      <div class="header-meta">更新时间：2026-07-23 09:16:56 | 自选股 36 | 持仓 2 合约 | 历史成交 213 笔</div>
     </div>
     <button class="logout-btn" onclick="logout()">退出 ↩</button>
   </header>
@@ -143,7 +143,7 @@
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
                 <span style="font-size:18px;">📈</span>
                 <span style="font-size:15px;font-weight:700;color:#f0f0f0;">牛市价差 (Bull Call Spread)</span>
-                <span class="strat-count">1</span>
+                <span class="strat-count">4</span>
               </div>
               <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">买入低行权价 Call + 卖出高行权价 Call，净支出权利金（Debit Spread）。低IV时买方成本低；看涨但不想押注大行情时使用。最大盈利 = 价差宽度 − 净权利金；最大亏损 = 净权利金。推荐：低行权价接近当前价，高行权价在近期阻力位；到期日 30–60 天。</div>
             </div>
@@ -151,8 +151,42 @@
           <div class="strategy-grid">
         <div class="strategy-card">
           <div class="card-header">
+            <span class="ticker-label">AMD</span>
+            <span class="price-label">$552.33 <span style="color:#34c759;font-size:12px;">+1.45%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 52.04</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+          
+          <details class="rec-details">
+            <summary class="rec-toggle">推荐合约 (1) ▾</summary>
+            <div class="rec-body">
+                <div class="rec-item">
+                  <div class="rec-item-hdr">
+                    <span class="rec-type-badge">牛市看跌价差 Bull Put Spread</span>
+                    <span class="rec-exp-tag">07/24 · 1天 · 📅末日</span>
+                  </div>
+                  <div class="rec-legs">SELL PUT $537.5 @$10.97  /  BUY  PUT $530.0 @$8.00</div>
+                  <div class="rec-be">盈亏平衡点：$534.53</div>
+                  <div class="rec-metrics">
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">71%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$297</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$453</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$453</div></div>
+                  </div>
+                </div></div>
+          </details>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
             <span class="ticker-label">ANET</span>
-            <span class="price-label">$171.92 <span style="color:#ff3b30;font-size:12px;">-5.83%</span></span>
+            <span class="price-label">$174.87 <span style="color:#34c759;font-size:12px;">+0.17%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
@@ -170,18 +204,50 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">牛市看跌价差 Bull Put Spread</span>
-                    <span class="rec-exp-tag">07/17 · 1天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/24 · 1天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">SELL PUT $167.5 @$2.07  /  BUY  PUT $165.0 @$1.33</div>
-                  <div class="rec-be">盈亏平衡点：$166.76</div>
+                  <div class="rec-legs">SELL PUT $170.0 @$1.84  /  BUY  PUT $167.5 @$1.24</div>
+                  <div class="rec-be">盈亏平衡点：$169.40</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#34c759;">76%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$74</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$176</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$176</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#34c759;">78%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$60</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$190</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$190</div></div>
                   </div>
                 </div></div>
           </details>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">IBKR</span>
+            <span class="price-label">$93.5 <span style="color:#ff3b30;font-size:12px;">-0.97%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 50.44</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+          
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">SPY</span>
+            <span class="price-label">$747.41 <span style="color:#ff3b30;font-size:12px;">-0.12%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 51.52</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">多头趋势+低IV，控制成本</div>
+          </div>
+          
         </div></div>
         </div>
         <div class="strat-section">
@@ -198,12 +264,12 @@
           <div class="strategy-grid">
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">TSLA</span>
-            <span class="price-label">$394.46 <span style="color:#ff3b30;font-size:12px;">-0.43%</span></span>
+            <span class="ticker-label">PLTR</span>
+            <span class="price-label">$124.57 <span style="color:#ff3b30;font-size:12px;">-6.1%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">空头排列</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 55.76</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 48.5</span>
             
           </div>
           
@@ -217,15 +283,15 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">熊市看涨价差 Bear Call Spread</span>
-                    <span class="rec-exp-tag">07/17 · 1天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/24 · 1天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">SELL CALL $400.0 @$3.25  /  BUY  CALL $405.0 @$1.95</div>
-                  <div class="rec-be">盈亏平衡点：$401.30</div>
+                  <div class="rec-legs">SELL CALL $127.0 @$1.44  /  BUY  CALL $129.0 @$0.83</div>
+                  <div class="rec-be">盈亏平衡点：$127.61</div>
                   <div class="rec-metrics">
                     <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">75%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$130</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$370</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$370</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$61</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$139</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$139</div></div>
                   </div>
                 </div></div>
           </details>
@@ -237,7 +303,7 @@
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
                 <span style="font-size:18px;">🚀</span>
                 <span style="font-size:15px;font-weight:700;color:#f0f0f0;">买 Call</span>
-                <span class="strat-count">5</span>
+                <span class="strat-count">8</span>
               </div>
               <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">直接买入看涨期权，看多方向 + 低IV时权利金便宜。RSI 超卖反弹信号出现时介入。推荐 Delta 0.35–0.50（接近 ATM），到期日 45–60 天，防止时间价值损耗过快。最大亏损 = 权利金；潜在盈利无上限。</div>
             </div>
@@ -245,12 +311,12 @@
           <div class="strategy-grid">
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">MRVL</span>
-            <span class="price-label">$206.26 <span style="color:#ff3b30;font-size:12px;">-7.27%</span></span>
+            <span class="ticker-label">GLW</span>
+            <span class="price-label">$154.06 <span style="color:#ff3b30;font-size:12px;">-5.14%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 30.94</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 20.0</span>
             
           </div>
           
@@ -264,41 +330,41 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/31 · 8天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  CALL $207.5 @$11.75</div>
-                  <div class="rec-be">盈亏平衡点：$219.25</div>
+                  <div class="rec-legs">BUY  CALL $155.0 @$10.90</div>
+                  <div class="rec-be">盈亏平衡点：$165.90</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">31%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">30%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1175</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1175</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1090</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1090</div></div>
                   </div>
                 </div>
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
+                    <span class="rec-exp-tag">08/07 · 15天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  CALL $205.0 @$17.34</div>
-                  <div class="rec-be">盈亏平衡点：$222.34</div>
+                  <div class="rec-legs">BUY  CALL $155.0 @$13.20</div>
+                  <div class="rec-be">盈亏平衡点：$168.20</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">32%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">30%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1734</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1734</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1320</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1320</div></div>
                   </div>
                 </div></div>
           </details>
         </div>
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">NOK</span>
-            <span class="price-label">$11.25 <span style="color:#ff3b30;font-size:12px;">-3.85%</span></span>
+            <span class="ticker-label">MRVL</span>
+            <span class="price-label">$210.99 <span style="color:#34c759;font-size:12px;">+1.46%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 30.12</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 29.57</span>
             
           </div>
           
@@ -312,29 +378,93 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/31 · 8天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  CALL $11.0 @$0.84</div>
-                  <div class="rec-be">盈亏平衡点：$11.84</div>
+                  <div class="rec-legs">BUY  CALL $210.0 @$14.30</div>
+                  <div class="rec-be">盈亏平衡点：$224.30</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">34%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">32%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$84</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$84</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1430</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1430</div></div>
                   </div>
                 </div>
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
+                    <span class="rec-exp-tag">08/07 · 15天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  CALL $11.0 @$0.94</div>
-                  <div class="rec-be">盈亏平衡点：$11.94</div>
+                  <div class="rec-legs">BUY  CALL $210.0 @$18.07</div>
+                  <div class="rec-be">盈亏平衡点：$228.07</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">34%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">31%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$94</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$94</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1807</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1807</div></div>
+                  </div>
+                </div></div>
+          </details>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">GEV</span>
+            <span class="price-label">$985.03 <span style="color:#ff3b30;font-size:12px;">-8.69%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 31.39</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超卖+低IV，期权便宜，博反弹</div>
+          </div>
+          
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">NOK</span>
+            <span class="price-label">$10.28 <span style="color:#ff3b30;font-size:12px;">-3.29%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 30.46</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超卖+低IV，期权便宜，博反弹</div>
+          </div>
+          
+          <details class="rec-details">
+            <summary class="rec-toggle">推荐合约 (2) ▾</summary>
+            <div class="rec-body">
+                <div class="rec-item">
+                  <div class="rec-item-hdr">
+                    <span class="rec-type-badge">买 Call</span>
+                    <span class="rec-exp-tag">07/31 · 8天 · 📅末日</span>
+                  </div>
+                  <div class="rec-legs">BUY  CALL $10.5 @$0.64</div>
+                  <div class="rec-be">盈亏平衡点：$11.14</div>
+                  <div class="rec-metrics">
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">29%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$64</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$64</div></div>
+                  </div>
+                </div>
+                <div class="rec-item">
+                  <div class="rec-item-hdr">
+                    <span class="rec-type-badge">买 Call</span>
+                    <span class="rec-exp-tag">08/07 · 15天 · 📅末日</span>
+                  </div>
+                  <div class="rec-legs">BUY  CALL $10.5 @$0.75</div>
+                  <div class="rec-be">盈亏平衡点：$11.25</div>
+                  <div class="rec-metrics">
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">29%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$75</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$75</div></div>
                   </div>
                 </div></div>
           </details>
@@ -342,11 +472,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">INTC</span>
-            <span class="price-label">$102.99 <span style="color:#ff3b30;font-size:12px;">-4.43%</span></span>
+            <span class="price-label">$102.62 <span style="color:#ff3b30;font-size:12px;">-2.68%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 29.9</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 30.57</span>
             
           </div>
           
@@ -360,41 +490,41 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/31 · 8天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  CALL $103.0 @$8.05</div>
-                  <div class="rec-be">盈亏平衡点：$111.05</div>
+                  <div class="rec-legs">BUY  CALL $103.0 @$8.40</div>
+                  <div class="rec-be">盈亏平衡点：$111.40</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">31%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">30%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$805</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$805</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$840</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$840</div></div>
                   </div>
                 </div>
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
+                    <span class="rec-exp-tag">08/07 · 15天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  CALL $103.0 @$9.55</div>
-                  <div class="rec-be">盈亏平衡点：$112.55</div>
+                  <div class="rec-legs">BUY  CALL $103.0 @$9.75</div>
+                  <div class="rec-be">盈亏平衡点：$112.75</div>
                   <div class="rec-metrics">
                     <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">30%</div></div>
                     <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$955</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$955</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$975</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$975</div></div>
                   </div>
                 </div></div>
           </details>
         </div>
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">APLD</span>
-            <span class="price-label">$29.03 <span style="color:#34c759;font-size:12px;">+1.97%</span></span>
+            <span class="ticker-label">PWRL</span>
+            <span class="price-label">$12.5 <span style="color:#ff3b30;font-size:12px;">-3.18%</span></span>
           </div>
           <div class="badge-row">
-            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 14.25</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 26.31</span>
             
           </div>
           
@@ -402,47 +532,31 @@
             <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超卖+低IV，期权便宜，博反弹</div>
           </div>
           
-          <details class="rec-details">
-            <summary class="rec-toggle">推荐合约 (2) ▾</summary>
-            <div class="rec-body">
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  CALL $29.0 @$1.75</div>
-                  <div class="rec-be">盈亏平衡点：$30.75</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">32%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$175</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$175</div></div>
-                  </div>
-                </div>
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  CALL $29.0 @$2.80</div>
-                  <div class="rec-be">盈亏平衡点：$31.80</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">31%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$280</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$280</div></div>
-                  </div>
-                </div></div>
-          </details>
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">PL</span>
+            <span class="price-label">$22.6 <span style="color:#ff3b30;font-size:12px;">-2.16%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 11.4</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超卖+低IV，期权便宜，博反弹</div>
+          </div>
+          
         </div>
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">COHR</span>
-            <span class="price-label">$299.38 <span style="color:#ff3b30;font-size:12px;">-3.67%</span></span>
+            <span class="price-label">$312.19 <span style="color:#ff3b30;font-size:12px;">-1.59%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">RSI 25.25</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 33.84</span>
             
           </div>
           
@@ -450,38 +564,6 @@
             <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超卖+低IV，期权便宜，博反弹</div>
           </div>
           
-          <details class="rec-details">
-            <summary class="rec-toggle">推荐合约 (2) ▾</summary>
-            <div class="rec-body">
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  CALL $300.0 @$20.20</div>
-                  <div class="rec-be">盈亏平衡点：$320.20</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">31%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$2020</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$2020</div></div>
-                  </div>
-                </div>
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Call</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  CALL $300.0 @$23.85</div>
-                  <div class="rec-be">盈亏平衡点：$323.85</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">32%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">无上限 ∞</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$2385</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$2385</div></div>
-                  </div>
-                </div></div>
-          </details>
         </div></div>
         </div>
         <div class="strat-section">
@@ -490,7 +572,7 @@
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
                 <span style="font-size:18px;">🐻</span>
                 <span style="font-size:15px;font-weight:700;color:#f0f0f0;">买 Put</span>
-                <span class="strat-count">6</span>
+                <span class="strat-count">4</span>
               </div>
               <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">直接买入看跌期权，看空方向 + 低IV时权利金便宜。RSI 超买回调信号出现时介入。推荐 Delta −0.35～−0.50，到期日 45–60 天。常用于对冲持仓风险，或纯方向性做空。</div>
             </div>
@@ -498,12 +580,12 @@
           <div class="strategy-grid">
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">GOOG</span>
-            <span class="price-label">$370.21 <span style="color:#34c759;font-size:12px;">+3.6%</span></span>
+            <span class="ticker-label">VST</span>
+            <span class="price-label">$166.74 <span style="color:#34c759;font-size:12px;">+2.72%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 66.19</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 67.22</span>
             
           </div>
           
@@ -517,41 +599,41 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/31 · 8天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  PUT $370.0 @$11.93</div>
-                  <div class="rec-be">盈亏平衡点：$358.07</div>
+                  <div class="rec-legs">BUY  PUT $167.5 @$5.25</div>
+                  <div class="rec-be">盈亏平衡点：$162.25</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">35%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$37000</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1193</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1193</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">38%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$16750</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$525</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$525</div></div>
                   </div>
                 </div>
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
+                    <span class="rec-exp-tag">08/07 · 15天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  PUT $370.0 @$13.70</div>
-                  <div class="rec-be">盈亏平衡点：$356.30</div>
+                  <div class="rec-legs">BUY  PUT $167.5 @$11.59</div>
+                  <div class="rec-be">盈亏平衡点：$155.91</div>
                   <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">36%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$37000</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1370</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1370</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">31%</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$16750</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1159</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1159</div></div>
                   </div>
                 </div></div>
           </details>
         </div>
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">HOOD</span>
-            <span class="price-label">$115.54 <span style="color:#34c759;font-size:12px;">+1.84%</span></span>
+            <span class="ticker-label">CEG</span>
+            <span class="price-label">$274.9 <span style="color:#34c759;font-size:12px;">+4.84%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 68.84</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 79.23</span>
             
           </div>
           
@@ -565,111 +647,29 @@
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
+                    <span class="rec-exp-tag">07/31 · 8天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  PUT $116.0 @$5.30</div>
-                  <div class="rec-be">盈亏平衡点：$110.70</div>
+                  <div class="rec-legs">BUY  PUT $275.0 @$8.30</div>
+                  <div class="rec-be">盈亏平衡点：$266.70</div>
                   <div class="rec-metrics">
                     <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">36%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$11600</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$530</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$530</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$27500</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$830</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$830</div></div>
                   </div>
                 </div>
                 <div class="rec-item">
                   <div class="rec-item-hdr">
                     <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
+                    <span class="rec-exp-tag">08/07 · 15天 · 📅末日</span>
                   </div>
-                  <div class="rec-legs">BUY  PUT $116.0 @$8.17</div>
-                  <div class="rec-be">盈亏平衡点：$107.83</div>
+                  <div class="rec-legs">BUY  PUT $275.0 @$12.90</div>
+                  <div class="rec-be">盈亏平衡点：$262.10</div>
                   <div class="rec-metrics">
                     <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">37%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$11600</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$817</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$817</div></div>
-                  </div>
-                </div></div>
-          </details>
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">META</span>
-            <span class="price-label">$681.31 <span style="color:#34c759;font-size:12px;">+3.07%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 73.49</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
-          </div>
-          
-          <details class="rec-details">
-            <summary class="rec-toggle">推荐合约 (1) ▾</summary>
-            <div class="rec-body">
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  PUT $682.5 @$20.44</div>
-                  <div class="rec-be">盈亏平衡点：$662.06</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">36%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$68250</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$2044</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$2044</div></div>
-                  </div>
-                </div></div>
-          </details>
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">PLTR</span>
-            <span class="price-label">$133.76 <span style="color:#34c759;font-size:12px;">+0.03%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 71.16</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
-          </div>
-          
-          <details class="rec-details">
-            <summary class="rec-toggle">推荐合约 (2) ▾</summary>
-            <div class="rec-body">
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  PUT $134.0 @$4.68</div>
-                  <div class="rec-be">盈亏平衡点：$129.32</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">35%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$13400</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$468</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$468</div></div>
-                  </div>
-                </div>
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  PUT $134.0 @$6.00</div>
-                  <div class="rec-be">盈亏平衡点：$128.00</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">36%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$13400</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$600</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$600</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$27500</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$1290</div></div>
+                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$1290</div></div>
                   </div>
                 </div></div>
           </details>
@@ -677,11 +677,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">XOM</span>
-            <span class="price-label">$144.51 <span style="color:#ff3b30;font-size:12px;">-0.4%</span></span>
+            <span class="price-label">$154.45 <span style="color:#34c759;font-size:12px;">+1.81%</span></span>
           </div>
           <div class="badge-row">
-            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 66.99</span>
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 81.23</span>
             
           </div>
           
@@ -689,47 +689,15 @@
             <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">超买+低IV，期权便宜，博回调</div>
           </div>
           
-          <details class="rec-details">
-            <summary class="rec-toggle">推荐合约 (2) ▾</summary>
-            <div class="rec-body">
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/24 · 8天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  PUT $145.0 @$2.87</div>
-                  <div class="rec-be">盈亏平衡点：$142.13</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">36%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$14500</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$287</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$287</div></div>
-                  </div>
-                </div>
-                <div class="rec-item">
-                  <div class="rec-item-hdr">
-                    <span class="rec-type-badge">买 Put</span>
-                    <span class="rec-exp-tag">07/31 · 15天 · 📅末日</span>
-                  </div>
-                  <div class="rec-legs">BUY  PUT $145.0 @$4.32</div>
-                  <div class="rec-be">盈亏平衡点：$140.68</div>
-                  <div class="rec-metrics">
-                    <div class="rec-m"><div class="rec-m-lbl">胜率</div><div class="rec-m-val" style="color:#ff9500;">35%</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大盈利</div><div class="rec-m-val" style="color:#34c759;">+$14500</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">最大亏损</div><div class="rec-m-val" style="color:#ff3b30;">-$432</div></div>
-                    <div class="rec-m"><div class="rec-m-lbl">所需资金</div><div class="rec-m-val">$432</div></div>
-                  </div>
-                </div></div>
-          </details>
         </div>
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">BULL</span>
-            <span class="price-label">$7.69 <span style="color:#34c759;font-size:12px;">+2.12%</span></span>
+            <span class="price-label">$8.1 <span style="color:#ff3b30;font-size:12px;">-0.61%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 71.68</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 70.72</span>
             
           </div>
           
@@ -745,7 +713,7 @@
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
                 <span style="font-size:18px;">👁️</span>
                 <span style="font-size:15px;font-weight:700;color:#f0f0f0;">观望</span>
-                <span class="strat-count">21</span>
+                <span class="strat-count">18</span>
               </div>
               <div style="font-size:12px;color:#aeaeb2;line-height:1.6;">当前技术面与 IV 信号不明显，无明确方向。建议等待：价格突破关键均线 / RSI 进入超买超卖区间 / IV Rank 升至 50 以上再行动。</div>
             </div>
@@ -753,28 +721,12 @@
           <div class="strategy-grid">
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">GLW</span>
-            <span class="price-label">$174.41 <span style="color:#ff3b30;font-size:12px;">-7.05%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.8</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
             <span class="ticker-label">TSM</span>
-            <span class="price-label">$419.48 <span style="color:#ff3b30;font-size:12px;">-0.22%</span></span>
+            <span class="price-label">$421.21 <span style="color:#ff3b30;font-size:12px;">-0.8%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 43.15</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.37</span>
             
           </div>
           
@@ -785,12 +737,12 @@
         </div>
         <div class="strategy-card">
           <div class="card-header">
-            <span class="ticker-label">VST</span>
-            <span class="price-label">$160.23 <span style="color:#34c759;font-size:12px;">+1.14%</span></span>
+            <span class="ticker-label">GOOG</span>
+            <span class="price-label">$341.91 <span style="color:#ff3b30;font-size:12px;">-1.24%</span></span>
           </div>
           <div class="badge-row">
-            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 46.44</span>
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.37</span>
             
           </div>
           
@@ -802,43 +754,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">DRAM</span>
-            <span class="price-label">$57.4 <span style="color:#ff3b30;font-size:12px;">-6.26%</span></span>
+            <span class="price-label">$57.77 <span style="color:#ff3b30;font-size:12px;">-1.84%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
-            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 38.41</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">GEV</span>
-            <span class="price-label">$1055.28 <span style="color:#ff3b30;font-size:12px;">-1.01%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 49.75</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">CEG</span>
-            <span class="price-label">$258.12 <span style="color:#34c759;font-size:12px;">+0.66%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 42.87</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.96</span>
             
           </div>
           
@@ -850,11 +770,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">AVGO</span>
-            <span class="price-label">$394.28 <span style="color:#34c759;font-size:12px;">+1.33%</span></span>
+            <span class="price-label">$396.81 <span style="color:#34c759;font-size:12px;">+2.67%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 55.03</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 60.36</span>
             
           </div>
           
@@ -866,11 +786,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">MU</span>
-            <span class="price-label">$904.28 <span style="color:#ff3b30;font-size:12px;">-8.02%</span></span>
+            <span class="price-label">$959.48 <span style="color:#ff3b30;font-size:12px;">-1.17%</span></span>
           </div>
           <div class="badge-row">
-            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 40.21</span>
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 43.2</span>
             
           </div>
           
@@ -882,27 +802,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">QQQ</span>
-            <span class="price-label">$717.74 <span style="color:#ff3b30;font-size:12px;">-0.27%</span></span>
+            <span class="price-label">$705.35 <span style="color:#ff3b30;font-size:12px;">-0.51%</span></span>
           </div>
           <div class="badge-row">
-            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 52.68</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">AMD</span>
-            <span class="price-label">$529.14 <span style="color:#ff3b30;font-size:12px;">-3.46%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 51.49</span>
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 41.43</span>
             
           </div>
           
@@ -914,11 +818,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">VRT</span>
-            <span class="price-label">$304.57 <span style="color:#34c759;font-size:12px;">+0.33%</span></span>
+            <span class="price-label">$301.16 <span style="color:#ff3b30;font-size:12px;">-1.1%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 46.44</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 45.53</span>
             
           </div>
           
@@ -930,11 +834,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">LITE</span>
-            <span class="price-label">$752.0 <span style="color:#ff3b30;font-size:12px;">-7.71%</span></span>
+            <span class="price-label">$829.7 <span style="color:#ff3b30;font-size:12px;">-0.94%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 41.24</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 52.65</span>
             
           </div>
           
@@ -946,11 +850,43 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">NVDA</span>
-            <span class="price-label">$212.5 <span style="color:#34c759;font-size:12px;">+0.33%</span></span>
+            <span class="price-label">$212.06 <span style="color:#34c759;font-size:12px;">+2.3%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 62.39</span>
+            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 62.72</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+          
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">HOOD</span>
+            <span class="price-label">$104.48 <span style="color:#ff3b30;font-size:12px;">-1.77%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 45.98</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+          
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">META</span>
+            <span class="price-label">$627.17 <span style="color:#ff3b30;font-size:12px;">-2.58%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 53.07</span>
             
           </div>
           
@@ -962,11 +898,27 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">EUV</span>
-            <span class="price-label">$25.82 <span style="color:#ff3b30;font-size:12px;">-2.6%</span></span>
+            <span class="price-label">$25.51 <span style="color:#ff3b30;font-size:12px;">-1.77%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 42.5</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 36.24</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+          
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">TSLA</span>
+            <span class="price-label">$374.01 <span style="color:#ff3b30;font-size:12px;">-1.3%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">空头排列</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 33.23</span>
             
           </div>
           
@@ -978,11 +930,27 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">HNGE</span>
-            <span class="price-label">$85.75 <span style="color:#ff3b30;font-size:12px;">-3.99%</span></span>
+            <span class="price-label">$79.08 <span style="color:#ff3b30;font-size:12px;">-6.25%</span></span>
           </div>
           <div class="badge-row">
-            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
-            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 75.68</span>
+            <span class="badge" style="background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 38.31</span>
+            
+          </div>
+          
+          <div class="strategy-box">
+            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
+          </div>
+          
+        </div>
+        <div class="strategy-card">
+          <div class="card-header">
+            <span class="ticker-label">APLD</span>
+            <span class="price-label">$30.08 <span style="color:#34c759;font-size:12px;">+0.1%</span></span>
+          </div>
+          <div class="badge-row">
+            <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 35.82</span>
             
           </div>
           
@@ -994,27 +962,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">AAPL</span>
-            <span class="price-label">$327.5 <span style="color:#34c759;font-size:12px;">+4.01%</span></span>
+            <span class="price-label">$325.89 <span style="color:#ff3b30;font-size:12px;">-0.56%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
-            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 70.23</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">PWRL</span>
-            <span class="price-label">$12.96 <span style="color:#ff3b30;font-size:12px;">-1.07%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 41.93</span>
+            <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">RSI 76.17</span>
             
           </div>
           
@@ -1026,27 +978,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">IVES</span>
-            <span class="price-label">$37.55 <span style="color:#34c759;font-size:12px;">+0.0%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
-            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 61.22</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">PL</span>
-            <span class="price-label">$24.9 <span style="color:#ff3b30;font-size:12px;">-2.58%</span></span>
+            <span class="price-label">$36.45 <span style="color:#ff3b30;font-size:12px;">-1.67%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 45.35</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 37.83</span>
             
           </div>
           
@@ -1058,27 +994,11 @@
         <div class="strategy-card">
           <div class="card-header">
             <span class="ticker-label">SNDK</span>
-            <span class="price-label">$1615.0 <span style="color:#ff3b30;font-size:12px;">-8.12%</span></span>
+            <span class="price-label">$1599.27 <span style="color:#34c759;font-size:12px;">+0.62%</span></span>
           </div>
           <div class="badge-row">
             <span class="badge" style="background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
-            <span class="badge" style="background:#86868b22;color:#86868b;border:1px solid #86868b44;">RSI 43.63</span>
-            
-          </div>
-          
-          <div class="strategy-box">
-            <div style="font-size:11px;color:#86868b;margin-top:4px;line-height:1.4;">无明显信号，等待方向确认</div>
-          </div>
-          
-        </div>
-        <div class="strategy-card">
-          <div class="card-header">
-            <span class="ticker-label">SPY</span>
-            <span class="price-label">$754.81 <span style="color:#34c759;font-size:12px;">+0.4%</span></span>
-          </div>
-          <div class="badge-row">
-            <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">多头排列</span>
-            <span class="badge" style="background:#ff950022;color:#ff9500;border:1px solid #ff950044;">RSI 68.13</span>
+            <span class="badge" style="background:#5ac8fa22;color:#5ac8fa;border:1px solid #5ac8fa44;">RSI 37.16</span>
             
           </div>
           
@@ -1096,13 +1016,13 @@
       </div>
       <div class="gantt-summary-item">
         <div class="gantt-summary-label">持仓总浮动盈亏</div>
-        <div class="gantt-summary-val" style="color:#ff3b30;">$-6.29</div>
+        <div class="gantt-summary-val" style="color:#34c759;">+$162.21</div>
       </div>
     </div>
     <div class="gantt-container">
       <div class="gantt-header">
         <div class="gantt-label-hdr">组合 / 合约</div>
-        <div class="gantt-axis"><div style="position:absolute;left:0.0%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/13</div><div style="position:absolute;left:14.3%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/15</div><div style="position:absolute;left:28.6%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/17</div><div style="position:absolute;left:42.9%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/19</div><div style="position:absolute;left:57.1%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/21</div><div style="position:absolute;left:71.4%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/23</div><div style="position:absolute;left:85.7%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/25</div><div style="position:absolute;left:100.0%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/27</div></div>
+        <div class="gantt-axis"><div style="position:absolute;left:0.0%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/20</div><div style="position:absolute;left:14.3%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/22</div><div style="position:absolute;left:28.6%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/24</div><div style="position:absolute;left:42.9%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/26</div><div style="position:absolute;left:57.1%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/28</div><div style="position:absolute;left:71.4%;font-size:10px;color:#86868b;transform:translateX(-50%);">07/30</div><div style="position:absolute;left:85.7%;font-size:10px;color:#86868b;transform:translateX(-50%);">08/01</div><div style="position:absolute;left:100.0%;font-size:10px;color:#86868b;transform:translateX(-50%);">08/03</div></div>
         <div class="gantt-pnl-hdr">盈亏</div>
       </div>
       
@@ -1119,12 +1039,12 @@
 标的：US.DRAM
 到期：2026-07-24
   PUT $54.0 qty:-1 cost:$1.56
-合计盈亏：$-55.29"
-                   style="left:14.3%;width:64.3%;background:#ff3b3088;border:1px solid #ff3b30;border-radius:6px;">
-                <span style="font-size:10px;padding:0 6px;white-space:nowrap;font-weight:600;">$-55</span>
+合计盈亏：+$79.41"
+                   style="left:0.0%;width:64.3%;background:#34c75988;border:1px solid #34c759;border-radius:6px;">
+                <span style="font-size:10px;padding:0 6px;white-space:nowrap;font-weight:600;">+$79</span>
               </div>
             </div>
-            <div class="gantt-pnl" style="color:#ff3b30;">$-55.29<br><span style="font-size:11px;">35.4%</span></div>
+            <div class="gantt-pnl" style="color:#34c759;">+$79.41<br><span style="font-size:11px;">+-50.9%</span></div>
           </div>
           <div class="gantt-legs">
             
@@ -1132,7 +1052,7 @@
               <span style="color:#86868b;font-size:11px;width:70px;flex-shrink:0;">卖出 Short</span>
               <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-size:10px;">PUT</span>
               <span style="font-size:11px;color:#aeaeb2;margin-left:6px;">$54.0 · -1手 · 成本$1.56</span>
-              <span style="margin-left:auto;font-size:11px;color:#ff3b30;">$-55.29</span>
+              <span style="margin-left:auto;font-size:11px;color:#34c759;">+$79.41</span>
             </div>
           </div>
         </div>
@@ -1149,12 +1069,12 @@
 标的：US.BULL
 到期：2027-01-15
   CALL $7.5 qty:1 cost:$1.06
-合计盈亏：+$49.00"
+合计盈亏：+$82.80"
                    style="left:0.0%;width:100.0%;background:#34c75988;border:1px solid #34c759;border-radius:6px;">
-                <span style="font-size:10px;padding:0 6px;white-space:nowrap;font-weight:600;">+$49</span>
+                <span style="font-size:10px;padding:0 6px;white-space:nowrap;font-weight:600;">+$83</span>
               </div>
             </div>
-            <div class="gantt-pnl" style="color:#34c759;">+$49.00<br><span style="font-size:11px;">+46.2%</span></div>
+            <div class="gantt-pnl" style="color:#34c759;">+$82.80<br><span style="font-size:11px;">+78.1%</span></div>
           </div>
           <div class="gantt-legs">
             
@@ -1162,90 +1082,12 @@
               <span style="color:#86868b;font-size:11px;width:70px;flex-shrink:0;">买入 Long</span>
               <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;font-size:10px;">CALL</span>
               <span style="font-size:11px;color:#aeaeb2;margin-left:6px;">$7.5 · 1手 · 成本$1.06</span>
-              <span style="margin-left:auto;font-size:11px;color:#34c759;">+$49.00</span>
+              <span style="margin-left:auto;font-size:11px;color:#34c759;">+$82.80</span>
             </div>
           </div>
         </div>
     </div></div>
   <div id="tab-pnl" class="tab-panel"><div class="period-tabs"><button class="period-tab" onclick="switchPeriod(this,'p0')">上周</button><button class="period-tab" onclick="switchPeriod(this,'p1')">本周</button><button class="period-tab" onclick="switchPeriod(this,'p2')">本月</button><button class="period-tab" onclick="switchPeriod(this,'p3')">本季度</button><button class="period-tab" onclick="switchPeriod(this,'p4')">今年</button><button class="period-tab active" onclick="switchPeriod(this,'p5')">全部</button></div><div id="p0" class="period-panel" style="display:none">
-        <div class="pnl-summary">
-          <div class="pnl-stat">
-            <div class="pnl-stat-label">毛盈亏</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$116.00</div>
-          </div>
-          <div class="pnl-stat">
-            <div class="pnl-stat-label">手续费</div>
-            <div class="pnl-stat-val" style="color:#ff9500;">-$2.52</div>
-          </div>
-          <div class="pnl-stat pnl-stat-net">
-            <div class="pnl-stat-label">净盈亏</div>
-            <div class="pnl-stat-val" style="color:#34c759;">+$113.48</div>
-          </div>
-          <div class="pnl-stat">
-            <div class="pnl-stat-label">胜率</div>
-            <div class="pnl-stat-val">50.0%</div>
-          </div>
-          <div class="pnl-stat">
-            <div class="pnl-stat-label">组合数（已计算）</div>
-            <div class="pnl-stat-val">2<span style="font-size:12px;color:#86868b;"> / 2</span></div>
-          </div>
-        </div>
-        <div style="background:#2c2c2e22;border:1px solid #3a3a3c;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#86868b;">
-          ℹ️ 数据来源：富途 history_deal_list_query（真实成交记录）。手续费来自结单（佣金、平台使用费、监管费等，经 order_fee_query 获取）。净盈亏 = 毛盈亏 − 手续费。
-        </div><div style="padding:8px 0 16px;">
-                <div style="display:flex;align-items:center;margin-bottom:6px;">
-                  <div style="width:55px;font-size:12px;color:#f0f0f0;flex-shrink:0;">DRAM</div>
-                  <div style="flex:1;background:#2c2c2e;border-radius:3px;height:16px;position:relative;">
-                    <div style="width:100.0%;height:100%;background:#34c75988;border-radius:3px;"></div>
-                  </div>
-                  <div style="width:75px;text-align:right;font-size:12px;color:#34c759;flex-shrink:0;">+$116.0</div>
-                </div></div>
-            <div class="pnl-combo-card">
-              <div style="margin-bottom:8px;">
-                <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:5px;">
-                  <span style="font-size:16px;font-weight:700;color:#f0f0f0;">DRAM</span>
-                  <span style="font-size:15px;font-weight:700;color:#34c759;">+$118.00</span>
-                  <span style="font-size:12px;color:#ff9500;">手续费 −$2.52</span>
-                  <span style="font-size:12px;font-weight:600;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:6px;padding:1px 7px;">净 +$115.48</span>
-                </div>
-                <div style="font-size:11px;color:#aeaeb2;">
-                  <span style="color:#0071e3;">单腿 PUT</span>
-                  <span style="margin:0 5px;color:#3a3a3c;">·</span>
-                  到期 2026-07-10 · 最后成交 2026-07-11
-                </div>
-              </div>
-              
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">空头 Short</span>
-                  <span class="badge" style="background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;">PUT</span>
-                  <span style="color:#aeaeb2;">$60.0</span>
-                  <span style="color:#86868b;margin-left:4px;">开 $1.18 / 平 $0.0</span>
-                  <span style="color:#34c759;margin-left:auto;">+$118.00</span>
-                </div>
-            </div>
-            <div class="pnl-combo-card">
-              <div style="margin-bottom:8px;">
-                <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:5px;">
-                  <span style="font-size:16px;font-weight:700;color:#f0f0f0;">DRAM</span>
-                  <span style="font-size:15px;font-weight:700;color:#ff3b30;">$-2.00</span>
-                  
-                  
-                </div>
-                <div style="font-size:11px;color:#aeaeb2;">
-                  <span style="color:#0071e3;">单腿 CALL</span>
-                  <span style="margin:0 5px;color:#3a3a3c;">·</span>
-                  到期 2026-07-17 · 最后成交 2026-07-06
-                </div>
-              </div>
-              
-                <div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid #3a3a3c33;font-size:12px;">
-                  <span style="color:#86868b;width:80px;flex-shrink:0;">多头 Long</span>
-                  <span class="badge" style="background:#34c75922;color:#34c759;border:1px solid #34c75944;">CALL</span>
-                  <span style="color:#aeaeb2;">$73.0</span>
-                  <span style="color:#86868b;margin-left:4px;">开 $1.86 / 平 $1.84</span>
-                  <span style="color:#ff3b30;margin-left:auto;">$-2.00</span>
-                </div>
-            </div></div><div id="p1" class="period-panel" style="display:none">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">毛盈亏</div>
@@ -1323,7 +1165,7 @@
                   <span style="color:#86868b;margin-left:4px;">开 $0.82 / 平 $0.15</span>
                   <span style="color:#34c759;margin-left:auto;">+$67.00</span>
                 </div>
-            </div></div><div id="p2" class="period-panel" style="display:none">
+            </div></div><div id="p1" class="period-panel" style="display:none"><div style="text-align:center;padding:40px;color:#86868b;">该时段暂无期权交易记录</div></div><div id="p2" class="period-panel" style="display:none">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">毛盈亏</div>
@@ -6510,17 +6352,17 @@
       </div>
       <div style="background:#2c2c2e;border:1px solid #3a3a3c;border-radius:12px;padding:16px 24px;text-align:center;">
         <div style="font-size:12px;color:#86868b;margin-bottom:6px;">总市值</div>
-        <div style="font-size:28px;font-weight:700;">$3,640</div>
+        <div style="font-size:28px;font-weight:700;">$3,505</div>
       </div>
       <div style="background:#ff3b300d;border:1px solid #ff3b3044;border-radius:12px;padding:16px 24px;text-align:center;">
         <div style="font-size:12px;color:#86868b;margin-bottom:6px;">总浮动盈亏</div>
-        <div style="font-size:28px;font-weight:700;color:#ff3b30;">$-92</div>
-        <div style="font-size:13px;color:#ff3b30;margin-top:2px;">-2.5%</div>
+        <div style="font-size:28px;font-weight:700;color:#ff3b30;">$-226</div>
+        <div style="font-size:13px;color:#ff3b30;margin-top:2px;">-6.1%</div>
       </div>
     </div>
     <div style="background:#2c2c2e;border:1px solid #3a3a3c;border-radius:12px;overflow:hidden;margin-bottom:32px;">
       <div style="padding:14px 16px;font-size:15px;font-weight:600;color:#f0f0f0;border-bottom:1px solid #3a3a3c;">
-        持仓总览 · 2026-07-16
+        持仓总览 · 2026-07-23
       </div>
       <div style="overflow-x:auto;">
         <table style="width:100%;border-collapse:collapse;">
@@ -6537,10 +6379,10 @@
           <tbody>
         <tr style="border-bottom:1px solid #2c2c2e;">
           <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">NOK</td>
-          <td style="padding:14px 16px;font-size:14px;">$11.25
-            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-3.85%</span></td>
+          <td style="padding:14px 16px;font-size:14px;">$10.28
+            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-3.29%</span></td>
           <td style="padding:14px 16px;font-size:14px;">$16.80 · 20股</td>
-          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$111（-33.0%）</td>
+          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$130（-38.8%）</td>
           <td style="padding:14px 16px;">
             <span style="font-size:12px;color:#ff6961;background:#ff696118;border:1px solid #ff696144;border-radius:6px;padding:3px 9px;">偏空</span>
           </td>
@@ -6549,24 +6391,11 @@
           </td>
         </tr>
         <tr style="border-bottom:1px solid #2c2c2e;">
-          <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">META</td>
-          <td style="padding:14px 16px;font-size:14px;">$681.31
-            <span style="font-size:12px;color:#34c759;margin-left:6px;">+3.07%</span></td>
-          <td style="padding:14px 16px;font-size:14px;">$616.24 · 1股</td>
-          <td style="padding:14px 16px;font-size:14px;color:#34c759;font-weight:600;">+$65（+10.6%）</td>
-          <td style="padding:14px 16px;">
-            <span style="font-size:12px;color:#30d158;background:#30d15818;border:1px solid #30d15844;border-radius:6px;padding:3px 9px;">偏多</span>
-          </td>
-          <td style="padding:14px 16px;">
-            <span style="font-size:15px;font-weight:700;color:#ff9500;background:#ff950018;border:1px solid #ff950044;border-radius:8px;padding:4px 14px;">减仓</span>
-          </td>
-        </tr>
-        <tr style="border-bottom:1px solid #2c2c2e;">
           <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">TSM</td>
-          <td style="padding:14px 16px;font-size:14px;">$419.48
-            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-0.22%</span></td>
+          <td style="padding:14px 16px;font-size:14px;">$421.21
+            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-0.80%</span></td>
           <td style="padding:14px 16px;font-size:14px;">$432.90 · 2股</td>
-          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$27（-3.1%）</td>
+          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$23（-2.7%）</td>
           <td style="padding:14px 16px;">
             <span style="font-size:12px;color:#ff6961;background:#ff696118;border:1px solid #ff696144;border-radius:6px;padding:3px 9px;">偏空</span>
           </td>
@@ -6576,12 +6405,12 @@
         </tr>
         <tr style="border-bottom:1px solid #2c2c2e;">
           <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">GOOG</td>
-          <td style="padding:14px 16px;font-size:14px;">$370.21
-            <span style="font-size:12px;color:#34c759;margin-left:6px;">+3.60%</span></td>
+          <td style="padding:14px 16px;font-size:14px;">$341.91
+            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-1.24%</span></td>
           <td style="padding:14px 16px;font-size:14px;">$357.90 · 2股</td>
-          <td style="padding:14px 16px;font-size:14px;color:#34c759;font-weight:600;">+$25（+3.4%）</td>
+          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$32（-4.5%）</td>
           <td style="padding:14px 16px;">
-            <span style="font-size:12px;color:#30d158;background:#30d15818;border:1px solid #30d15844;border-radius:6px;padding:3px 9px;">偏多</span>
+            <span style="font-size:12px;color:#ff6961;background:#ff696118;border:1px solid #ff696144;border-radius:6px;padding:3px 9px;">偏空</span>
           </td>
           <td style="padding:14px 16px;">
             <span style="font-size:15px;font-weight:700;color:#0071e3;background:#0071e318;border:1px solid #0071e344;border-radius:8px;padding:4px 14px;">持有</span>
@@ -6589,10 +6418,10 @@
         </tr>
         <tr style="border-bottom:1px solid #2c2c2e;">
           <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">NVDA</td>
-          <td style="padding:14px 16px;font-size:14px;">$212.50
-            <span style="font-size:12px;color:#34c759;margin-left:6px;">+0.33%</span></td>
+          <td style="padding:14px 16px;font-size:14px;">$212.06
+            <span style="font-size:12px;color:#34c759;margin-left:6px;">+2.30%</span></td>
           <td style="padding:14px 16px;font-size:14px;">$215.00 · 3股</td>
-          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$8（-1.2%）</td>
+          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$9（-1.4%）</td>
           <td style="padding:14px 16px;">
             <span style="font-size:12px;color:#30d158;background:#30d15818;border:1px solid #30d15844;border-radius:6px;padding:3px 9px;">偏多</span>
           </td>
@@ -6602,15 +6431,28 @@
         </tr>
         <tr style="border-bottom:1px solid #2c2c2e;">
           <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">EUV</td>
-          <td style="padding:14px 16px;font-size:14px;">$25.82
-            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-2.60%</span></td>
+          <td style="padding:14px 16px;font-size:14px;">$25.51
+            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-1.77%</span></td>
           <td style="padding:14px 16px;font-size:14px;">$27.64 · 20股</td>
-          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$36（-6.6%）</td>
+          <td style="padding:14px 16px;font-size:14px;color:#ff3b30;font-weight:600;">$43（-7.7%）</td>
           <td style="padding:14px 16px;">
             <span style="font-size:12px;color:#86868b;background:#86868b18;border:1px solid #86868b44;border-radius:6px;padding:3px 9px;">数据不足</span>
           </td>
           <td style="padding:14px 16px;">
             <span style="font-size:15px;font-weight:700;color:#0071e3;background:#0071e318;border:1px solid #0071e344;border-radius:8px;padding:4px 14px;">持有</span>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #2c2c2e;">
+          <td style="padding:14px 16px;font-size:16px;font-weight:700;color:#f0f0f0;">META</td>
+          <td style="padding:14px 16px;font-size:14px;">$627.17
+            <span style="font-size:12px;color:#ff3b30;margin-left:6px;">-2.58%</span></td>
+          <td style="padding:14px 16px;font-size:14px;">$616.24 · 1股</td>
+          <td style="padding:14px 16px;font-size:14px;color:#34c759;font-weight:600;">+$11（+1.8%）</td>
+          <td style="padding:14px 16px;">
+            <span style="font-size:12px;color:#30d158;background:#30d15818;border:1px solid #30d15844;border-radius:6px;padding:3px 9px;">偏多</span>
+          </td>
+          <td style="padding:14px 16px;">
+            <span style="font-size:15px;font-weight:700;color:#34c759;background:#34c75918;border:1px solid #34c75944;border-radius:8px;padding:4px 14px;">加仓</span>
           </td>
         </tr></tbody>
         </table>
@@ -6621,49 +6463,23 @@
       <!-- 标题行 -->
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
         <span style="font-size:24px;font-weight:700;">NOK</span>
-        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-3.85% 今日</span>
+        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-3.29% 今日</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#ff3b3022;color:#ff3b30;border:1px solid #ff3b3044;font-weight:700;">清仓</span>
       </div>
 
       <!-- 持仓数据一行 -->
       <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
-        <span>现价 <b style="color:#f0f0f0;">$11.25</b></span>
+        <span>现价 <b style="color:#f0f0f0;">$10.28</b></span>
         <span>均价 <b style="color:#f0f0f0;">$16.80</b></span>
         <span>持股 <b style="color:#f0f0f0;">20 股</b></span>
-        <span>市值 <b style="color:#f0f0f0;">$225</b></span>
-        <span>浮动盈亏 <b style="color:#ff3b30;">$111.00（-33.0%）</b></span>
+        <span>市值 <b style="color:#f0f0f0;">$206</b></span>
+        <span>浮动盈亏 <b style="color:#ff3b30;">$130.40（-38.8%）</b></span>
       </div>
 
       <!-- 技术分析正文 -->
       <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
-        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格承压于均线下方，趋势偏空，需警惕进一步下行。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $11.25 · MA20 $12.89（-12.7%） · MA50 $13.85（-18.8%） · MA200 $8.85（+27.1%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】30，动能偏弱，观望为主，等待企稳信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】关键支撑 MA200 $8.85（-21.3%），跌穿建议减仓。机动止损 $10.69（-5%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】第一目标：收复 MA50 $13.85（+23.1%）。</div>
-      </div>
-
-      
-    </div>
-    <div style="background:#2c2c2e;border:1px solid #3a3a3c;border-radius:14px;padding:20px 24px;margin-bottom:16px;">
-
-      <!-- 标题行 -->
-      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
-        <span style="font-size:24px;font-weight:700;">META</span>
-        <span style="font-size:15px;font-weight:600;color:#34c759;">+3.07% 今日</span>
-        <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
-        <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#ff950022;color:#ff9500;border:1px solid #ff950044;font-weight:700;">减仓</span>
-      </div>
-
-      <!-- 持仓数据一行 -->
-      <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
-        <span>现价 <b style="color:#f0f0f0;">$681.31</b></span>
-        <span>均价 <b style="color:#f0f0f0;">$616.24</b></span>
-        <span>持股 <b style="color:#f0f0f0;">1 股</b></span>
-        <span>市值 <b style="color:#f0f0f0;">$681</b></span>
-        <span>浮动盈亏 <b style="color:#34c759;">+$65.07（+10.6%）</b></span>
-      </div>
-
-      <!-- 技术分析正文 -->
-      <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
-        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格位于主要均线上方，趋势偏多，但排列尚未完全展开。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $681.31 · MA20 $598.12（+13.9%） · MA50 $602.31（+13.1%） · MA200 $640.37（+6.4%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】73，进入超买区，短期存在回调压力，可考虑减仓或等待回落再加。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】紧止损参考 MA20 $598.12（-12.2%），宽止损参考 MA50 $602.31（-11.6%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】RSI偏高，可在 +4%（$708.56）考虑先减仓；+8% 目标 $735.81，+15% 目标 $783.51。</div>
+        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格承压于均线下方，趋势偏空，需警惕进一步下行。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $10.28 · MA20 $11.99（-14.3%） · MA50 $13.58（-24.3%） · MA200 $8.99（+14.3%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】30，动能偏弱，观望为主，等待企稳信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】关键支撑 MA200 $8.99（-12.5%），跌穿建议减仓。机动止损 $9.77（-5%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】第一目标：收复 MA50 $13.58（+32.1%）。</div>
       </div>
 
       
@@ -6673,23 +6489,23 @@
       <!-- 标题行 -->
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
         <span style="font-size:24px;font-weight:700;">TSM</span>
-        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-0.22% 今日</span>
+        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-0.80% 今日</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#0071e322;color:#0071e3;border:1px solid #0071e344;font-weight:700;">持有</span>
       </div>
 
       <!-- 持仓数据一行 -->
       <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
-        <span>现价 <b style="color:#f0f0f0;">$419.48</b></span>
+        <span>现价 <b style="color:#f0f0f0;">$421.21</b></span>
         <span>均价 <b style="color:#f0f0f0;">$432.90</b></span>
         <span>持股 <b style="color:#f0f0f0;">2 股</b></span>
-        <span>市值 <b style="color:#f0f0f0;">$839</b></span>
-        <span>浮动盈亏 <b style="color:#ff3b30;">$26.84（-3.1%）</b></span>
+        <span>市值 <b style="color:#f0f0f0;">$842</b></span>
+        <span>浮动盈亏 <b style="color:#ff3b30;">$23.38（-2.7%）</b></span>
       </div>
 
       <!-- 技术分析正文 -->
       <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
-        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格承压于均线下方，趋势偏空，需警惕进一步下行。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $419.48 · MA20 $439.86（-4.6%） · MA50 $424.92（-1.3%） · MA200 $349.04（+20.2%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】43，中性区间，无明显超买超卖信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】关键支撑 MA200 $349.04（-16.8%），跌穿建议减仓。机动止损 $398.51（-5%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】第一目标：收复 MA50 $424.92（+1.3%）；第二目标：收复 MA20 $439.86（+4.9%）。</div>
+        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格承压于均线下方，趋势偏空，需警惕进一步下行。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $421.21 · MA20 $431.47（-2.4%） · MA50 $425.31（-1.0%） · MA200 $352.36（+19.5%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】40，中性区间，无明显超买超卖信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】关键支撑 MA200 $352.36（-16.3%），跌穿建议减仓。机动止损 $400.15（-5%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】第一目标：收复 MA50 $425.31（+1.0%）；第二目标：收复 MA20 $431.47（+2.4%）。</div>
       </div>
 
       
@@ -6699,23 +6515,23 @@
       <!-- 标题行 -->
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
         <span style="font-size:24px;font-weight:700;">GOOG</span>
-        <span style="font-size:15px;font-weight:600;color:#34c759;">+3.60% 今日</span>
-        <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-1.24% 今日</span>
+        <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#ff696122;color:#ff6961;border:1px solid #ff696144;">偏空</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#0071e322;color:#0071e3;border:1px solid #0071e344;font-weight:700;">持有</span>
       </div>
 
       <!-- 持仓数据一行 -->
       <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
-        <span>现价 <b style="color:#f0f0f0;">$370.21</b></span>
+        <span>现价 <b style="color:#f0f0f0;">$341.91</b></span>
         <span>均价 <b style="color:#f0f0f0;">$357.90</b></span>
         <span>持股 <b style="color:#f0f0f0;">2 股</b></span>
-        <span>市值 <b style="color:#f0f0f0;">$740</b></span>
-        <span>浮动盈亏 <b style="color:#34c759;">+$24.62（+3.4%）</b></span>
+        <span>市值 <b style="color:#f0f0f0;">$684</b></span>
+        <span>浮动盈亏 <b style="color:#ff3b30;">$31.98（-4.5%）</b></span>
       </div>
 
       <!-- 技术分析正文 -->
       <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
-        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格位于主要均线上方，趋势偏多，但排列尚未完全展开。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $370.21 · MA20 $355.64（+4.1%） · MA50 $369.14（+0.3%） · MA200 $319.58（+15.8%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】66，动能偏强，趋势延续概率较高。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】紧止损参考 MA20 $355.64（-3.9%），宽止损参考 MA50 $369.14（-0.3%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】RSI偏高，可在 +4%（$385.02）考虑先减仓；+8% 目标 $399.83，+15% 目标 $425.74。</div>
+        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格承压于均线下方，趋势偏空，需警惕进一步下行。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $341.91 · MA20 $352.84（-3.1%） · MA50 $364.93（-6.3%） · MA200 $322.16（+6.1%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】40，中性区间，无明显超买超卖信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】关键支撑 MA200 $322.16（-5.8%），跌穿建议减仓。机动止损 $324.81（-5%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】第一目标：收复 MA50 $364.93（+6.7%）。</div>
       </div>
 
       
@@ -6725,23 +6541,23 @@
       <!-- 标题行 -->
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
         <span style="font-size:24px;font-weight:700;">NVDA</span>
-        <span style="font-size:15px;font-weight:600;color:#34c759;">+0.33% 今日</span>
+        <span style="font-size:15px;font-weight:600;color:#34c759;">+2.30% 今日</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#0071e322;color:#0071e3;border:1px solid #0071e344;font-weight:700;">持有</span>
       </div>
 
       <!-- 持仓数据一行 -->
       <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
-        <span>现价 <b style="color:#f0f0f0;">$212.50</b></span>
+        <span>现价 <b style="color:#f0f0f0;">$212.06</b></span>
         <span>均价 <b style="color:#f0f0f0;">$215.00</b></span>
         <span>持股 <b style="color:#f0f0f0;">3 股</b></span>
-        <span>市值 <b style="color:#f0f0f0;">$638</b></span>
-        <span>浮动盈亏 <b style="color:#ff3b30;">$7.50（-1.2%）</b></span>
+        <span>市值 <b style="color:#f0f0f0;">$636</b></span>
+        <span>浮动盈亏 <b style="color:#ff3b30;">$8.82（-1.4%）</b></span>
       </div>
 
       <!-- 技术分析正文 -->
       <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
-        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格位于主要均线上方，趋势偏多，但排列尚未完全展开。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $212.50 · MA20 $202.22（+5.1%） · MA50 $209.50（+1.4%） · MA200 $191.95（+10.7%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】62，动能偏强，趋势延续概率较高。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】紧止损参考 MA20 $202.22（-4.8%），宽止损参考 MA50 $209.50（-1.4%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】+8% 目标 $229.50，+15% 目标 $244.37。</div>
+        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格位于主要均线上方，趋势偏多，但排列尚未完全展开。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $212.06 · MA20 $202.29（+4.8%） · MA50 $209.59（+1.2%） · MA200 $192.50（+10.2%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】63，动能偏强，趋势延续概率较高。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】紧止损参考 MA20 $202.29（-4.6%），宽止损参考 MA50 $209.59（-1.2%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】+8% 目标 $229.02，+15% 目标 $243.87。</div>
       </div>
 
       
@@ -6751,23 +6567,49 @@
       <!-- 标题行 -->
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
         <span style="font-size:24px;font-weight:700;">EUV</span>
-        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-2.60% 今日</span>
+        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-1.77% 今日</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#86868b22;color:#86868b;border:1px solid #86868b44;">数据不足</span>
         <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#0071e322;color:#0071e3;border:1px solid #0071e344;font-weight:700;">持有</span>
       </div>
 
       <!-- 持仓数据一行 -->
       <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
-        <span>现价 <b style="color:#f0f0f0;">$25.82</b></span>
+        <span>现价 <b style="color:#f0f0f0;">$25.51</b></span>
         <span>均价 <b style="color:#f0f0f0;">$27.64</b></span>
         <span>持股 <b style="color:#f0f0f0;">20 股</b></span>
-        <span>市值 <b style="color:#f0f0f0;">$516</b></span>
-        <span>浮动盈亏 <b style="color:#ff3b30;">$36.40（-6.6%）</b></span>
+        <span>市值 <b style="color:#f0f0f0;">$510</b></span>
+        <span>浮动盈亏 <b style="color:#ff3b30;">$42.60（-7.7%）</b></span>
       </div>
 
       <!-- 技术分析正文 -->
       <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
-        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】数据不足，以价格与均线关系为准。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $25.82 · MA20 $28.18（-8.4%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】42，中性区间，无明显超买超卖信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】已跌破MA200，处于高风险区。建议止损位 $24.01（-7%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】+8% 目标 $27.89，+15% 目标 $29.69；突破 MA20 $28.18 后动能将增强。</div>
+        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】数据不足，以价格与均线关系为准。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $25.51 · MA20 $27.04（-5.7%） · MA50 $27.54（-7.4%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】36，动能偏弱，观望为主，等待企稳信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】已跌破MA200，处于高风险区。建议止损位 $23.72（-7%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】第一目标：收复 MA50 $27.54（+8.0%）。</div>
+      </div>
+
+      
+    </div>
+    <div style="background:#2c2c2e;border:1px solid #3a3a3c;border-radius:14px;padding:20px 24px;margin-bottom:16px;">
+
+      <!-- 标题行 -->
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+        <span style="font-size:24px;font-weight:700;">META</span>
+        <span style="font-size:15px;font-weight:600;color:#ff3b30;">-2.58% 今日</span>
+        <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#30d15822;color:#30d158;border:1px solid #30d15844;">偏多</span>
+        <span style="font-size:13px;padding:3px 10px;border-radius:6px;background:#34c75922;color:#34c759;border:1px solid #34c75944;font-weight:700;">加仓</span>
+      </div>
+
+      <!-- 持仓数据一行 -->
+      <div style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:18px;font-size:14px;color:#aeaeb2;">
+        <span>现价 <b style="color:#f0f0f0;">$627.17</b></span>
+        <span>均价 <b style="color:#f0f0f0;">$616.24</b></span>
+        <span>持股 <b style="color:#f0f0f0;">1 股</b></span>
+        <span>市值 <b style="color:#f0f0f0;">$627</b></span>
+        <span>浮动盈亏 <b style="color:#34c759;">+$10.93（+1.8%）</b></span>
+      </div>
+
+      <!-- 技术分析正文 -->
+      <div style="background:#1c1c1e;border-radius:10px;padding:16px 18px;">
+        <div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【趋势】价格位于主要均线上方，趋势偏多，但排列尚未完全展开。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【均线】现价 $627.17 · MA20 $615.93（+1.8%） · MA50 $605.82（+3.5%） · MA200 $638.23（-1.7%）</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【RSI】53，中性区间，无明显超买超卖信号。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止损】紧止损参考 MA20 $615.93（-1.8%），宽止损参考 MA50 $605.82（-3.4%）。</div><div style="font-size:14px;color:#d0d0d0;line-height:1.8;margin-bottom:4px;">【止盈】+8% 目标 $677.34，+15% 目标 $721.25。</div>
       </div>
 
       
