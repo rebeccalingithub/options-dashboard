@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>美股交易看板</title>
+<title>交易看板</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:#1c1c1e;color:#f0f0f0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;min-height:100vh}
@@ -110,7 +110,7 @@
 <div id="lock-screen">
   <div class="lock-box">
     <div style="font-size:40px;margin-bottom:12px;">🔐</div>
-    <h2>美股交易看板</h2>
+    <h2>交易看板</h2>
     <p>请输入访问密码</p>
     <input type="password" id="pwd-input" placeholder="••••••" onkeydown="if(event.key==='Enter')checkPwd()">
     <button onclick="checkPwd()">进入</button>
@@ -122,8 +122,8 @@
 <div id="main-content" style="display:none;">
   <header>
     <div>
-      <h1>📊 美股交易看板</h1>
-      <div class="header-meta">更新时间：2026-09-04 14:09:23 | 自选股 39 | 持仓 2 合约 | 历史成交 241 笔</div>
+      <h1>📊 交易看板</h1>
+      <div class="header-meta">更新时间：2026-09-04 14:09:23 | 自选股 39 | 美股持仓 2 | 港股持仓 0 | 美股成交 241 笔 | 港股成交 0 笔</div>
     </div>
     <button class="logout-btn" onclick="logout()">退出 ↩</button>
   </header>
@@ -131,9 +131,11 @@
   <div class="main-tabs">
     <button class="main-tab active" onclick="switchTab(this,'tab-strategy')">🎯 期权策略推荐</button>
     <button class="main-tab" onclick="switchTab(this,'tab-gantt')">📅 期权持仓甘特图</button>
-    <button class="main-tab" onclick="switchTab(this,'tab-pnl')">💰 期权P&amp;L</button>
-    <button class="main-tab" onclick="switchTab(this,'tab-stocks')">📈 正股P&amp;L</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-pnl')">💰 美股期权P&amp;L</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-stocks')">📈 美股正股P&amp;L</button>
     <button class="main-tab" onclick="switchTab(this,'tab-stock-analysis')">🔍 持仓正股分析</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-hk-pnl')">🇭🇰 港股期权P&amp;L</button>
+    <button class="main-tab" onclick="switchTab(this,'tab-hk-stocks')">🇭🇰 港股正股P&amp;L</button>
   </div>
 
   <div id="tab-strategy" class="tab-panel active">
@@ -6139,7 +6141,7 @@
                   <span style="color:#ff3b30;margin-left:auto;">$-204.00</span>
                 </div>
             </div></div></div>
-  <div id="tab-stocks" class="tab-panel"><div class="period-tabs"><button class="period-tab active" onclick="switchPeriod2(this,'sp0')">今年</button><button class="period-tab" onclick="switchPeriod2(this,'sp1')">全部</button></div><div id="sp0" class="period-panel" style="display:block">
+  <div id="tab-stocks" class="tab-panel"><div class="period-tabs"><button class="period-tab active" onclick="switchPeriod(this,'sp0')">今年</button><button class="period-tab" onclick="switchPeriod(this,'sp1')">全部</button></div><div id="sp0" class="period-panel" style="display:block">
         <div class="pnl-summary">
           <div class="pnl-stat">
             <div class="pnl-stat-label">毛盈亏</div>
@@ -8107,6 +8109,8 @@
 
       
     </div></div>
+  <div id="tab-hk-pnl" class="tab-panel"><div style="text-align:center;padding:40px;color:#86868b;">暂无历史成交记录</div></div>
+  <div id="tab-hk-stocks" class="tab-panel"><div style="text-align:center;padding:40px;color:#86868b;">暂无正股交易记录（需重新运行 build_options_data.py 采集数据）</div></div>
 </div>
 
 <script>
